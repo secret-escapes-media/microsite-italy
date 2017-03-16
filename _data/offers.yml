@@ -1,0 +1,68 @@
+
+##############################################
+## CITY OFFERS
+##############################################
+
+- title: Example offer
+  class: offer
+  category: cities
+  venice: true
+  milan: true
+  rome: true
+  florence: true
+  location: Location
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  price: 219
+  price-description: per room per night
+  saved: 23
+  expires: 2017/03/14
+  link:
+
+- title: Example offer
+  class: offer
+  category: cities
+  venice: true
+  milan: true
+  rome: true
+  florence: true
+  location: Location
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  price: 219
+  price-description: per room per night
+  saved: 23
+  expires: 2017/03/14
+  link:
+
+##############################################
+## LANDSCAPE OFFERS
+##############################################
+
+- title: Example offer
+  class: offer
+  category: landscapes
+  amalfi-coast: true
+  sicily: true
+  lombardy: true
+  tuscany: true
+  location: Location
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  price: 219
+  price-description: per room per night
+  saved: 23
+  expires: 2017/03/14
+  link:
+
+- title: Example offer
+  class: offer
+  category: landscapes
+  amalfi-coast: true
+  sicily: true
+  lombardy: true
+  tuscany: true
+  location: Location
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  price: 219
+  price-description: per room per night
+  saved: 23
+  expires: 2017/03/14
+  link:

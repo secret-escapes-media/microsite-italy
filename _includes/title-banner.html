@@ -1,0 +1,23 @@
+<section class="title-banner invert-text" style="background-image: url({{ site.baseurl }}/img/bg/banner-{{ page.title | slugify }}.jpg);">
+  <div class="title-banner__wrap">
+    <div class="title-banner__title row">
+
+      {% if page.class != 'overview' %}
+        <span class="title title--sub title--smallest title--expanded">ITALY</span>
+      {% endif %}
+
+      <h1 class="page-title title title--larger title--expanded title--upper title--light">
+        {% if page.banner-title %}
+          {{ page.banner-title }}
+        {% else %}
+          {{ page.title }}
+        {% endif %}
+      </h1>
+
+      {% if page.banner-content %}
+        {{ page.banner-content }}
+      {% endif %}
+
+    </div>
+  </div>
+</section>

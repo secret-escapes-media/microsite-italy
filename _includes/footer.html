@@ -1,0 +1,18 @@
+<footer>
+  <div class="site-nav site-nav--footer">
+    <div class="row">
+      <ul class="site-nav__list">
+        {% include site-navigation.html block="site-nav" %}
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="row row--padding">
+      <div class="footer__logos align-center">
+        <a class="logo logo--secret-escapes" href="https://www.secretescapes.com/"><img class="js-svg-swap" src="{{ site.baseurl }}/img/logo/secret-escapes.png" alt="Secret Escapes logo"></a>
+        {% include partner-logo.html %}
+        <p class="p--center">© Copyright {{ 'now' | date: "%Y" }} Secret Escapes</p>
+      </div>
+    </div>
+  </div>
+</footer>

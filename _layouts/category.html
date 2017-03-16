@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+{% include title-banner.html %}
+
+{% include microsite-nav.html %}
+
+
+{% if page.intro  %}
+<section class="section bg--{{ page.class }} invert-text">
+  <div class="row row--padding">
+    <div class="row align-center">
+      {{ page.intro }}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+
+{% assign category-pages = site.pages | where: "category", page.class %}
+{% for category-page in category-pages %}
+  <section class="section{% cycle '', ' bg--italy-light-grey' %}">
+    <div class="row row--padding">
+      <div class="row align-center">
+        <h2 class="align-center title title--large title--color title--expanded title--light">
+          <a class="a--plain" href="{{ category-page.url }}">
+            {{ category-page.title }}
+          </a>
+        </h2>
+        <p class="line-length line-length--center p--large">{{ category-page.intro-short }}</p>
+      </div>
+    </div>
+    <div class="row row--padding">
+      <div class="row">
+        {% assign featured-pois = category-page.pois | where: 'featured', 'true' %}
+        {% for poi in featured-pois %}
+          <div class="featured-poi invert-text">
+            <a href="{{ category-page.url }}#{{ poi.class }}">
+              <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image: url('{{site.baseurl}}/img/content/{{ category-page.class }}/{{ poi.class }}.jpg');">
+                <div class="featured-poi__overlay">
+                  <h3 class="title title--sub title--small">{{ poi.title }}</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="align-center">
+        <a href="{{ category-page.url }}" class="btn btn--red">See {{ category-page.title }}</a>
+      </div>
+    </div>
+  </section>
+{% endfor %}
+
+
+<!-- OFFERS - FOR CATEGORY -->
+<section class="section offers">
+  <div class="row row--padding">
+    <h2 class="align-center title title--medium title--color title--light title--expanded">{{ page.title }} Offers</h2>
+  </div>
+  <div class="row row--padding">
+    {% assign offers = site.data.offers | where: "category", page.class | sort: 'price' %}
+    {% for offer in offers %}
+      {% include offer.html %}
+    {% endfor %}
+  </div>
+  <div class="align-center">
+    <a href="{{site.baseurl}}/offers" class="btn btn--orange">See All Offers</a>
+  </div>
+</section>

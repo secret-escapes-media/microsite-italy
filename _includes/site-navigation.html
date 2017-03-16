@@ -1,0 +1,11 @@
+{% assign nav-order = site.html_pages | sort:"nav-order" %}
+
+{% for nav-page in nav-order %}
+{% if nav-page.nav-order %}
+  <li class="{{include.block}}__item{% if nav-page.class == page.class %} {{include.block}}__item--current{% endif %}">
+    <a class="{{include.block}}__link {{include.block}}__link--{{ nav-page.title | slugify }}" href="{{ site.baseurl }}{{ nav-page.url }}">
+      {{ nav-page.title }}
+    </a>
+  </li>
+{% endif %}
+{% endfor %}

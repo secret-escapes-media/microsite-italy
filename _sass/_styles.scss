@@ -1,0 +1,126 @@
+// all custom styles for the site
+
+
+// ---------- GENERAL STYLES ----------
+
+.invert-text {
+  color: $white;
+  p, .title { color: $white; }
+}
+
+.bg {
+  &--light-grey       { background-color: $italy-light-grey; }
+  &--italy-red        { background-color: $italy-red; }
+  &--italy-brown      { background-color: $italy-brown; }
+  &--italy-green      { background-color: $italy-green; }
+  &--italy-blue       { background-color: $italy-blue; }
+  &--italy-light-blue { background-color: $italy-light-blue; }
+  &--italy-light-grey { background-color: $italy-light-grey; }
+  &--italy-grey       { background-color: $italy-grey; }
+  &--italy-dark-grey  { background-color: $italy-dark-grey; }
+  &--cities           { background-color: $italy-dark-grey; }
+  &--landscapes       { background-color: $italy-green; }
+}
+
+.offer-promo {
+  position: relative;
+  padding-top: ($margin*6);
+  padding-bottom: ($margin*6);
+  color: $white;
+  background-color: rgba(60, 67, 76, 0.75);
+  text-align: center;
+  &__bgs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-background;
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: none;
+    width: 100%;
+    @include background-attributes;
+    &:nth-of-type(1) {
+      left: 0;
+      display: block;
+    }
+    @include bp(large){
+      width: 33.33%;
+      &:nth-of-type(2) {
+        display: block;
+        left: 33.33%;
+      }
+      &:nth-of-type(3) {
+        display: block;
+        left: 66.66%;
+      }
+    }
+  }
+}
+
+
+// ---------- button ----------
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: .833em 4em;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  @include transition;
+  line-height: 1.33;
+  text-align: center;
+  &:hover { text-decoration: none; }
+  * + & { margin-top: 1.5em; }
+  &--arrow {
+    $arrow-height: 14px;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      display: block;
+      width: 8px;
+      height: $arrow-height;
+      margin-top: -($arrow-height/2);
+      background-image: url(../img/icons/btn-arrow-white.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      .svg & { background-image: url(../img/icons/btn-arrow-white.svg); }
+    }
+  }
+  &--white { background-color: rgba($white, .3);
+    &:hover { background-color: rgba($white, .5);}
+  }
+  &--red { background-color: $italy-red;
+    &:hover { background-color: darken($italy-red, 10)}
+  }
+  &--orange { background-color: $se-orange;
+    &:hover { background-color: darken($se-orange, 5)}
+  }
+  &--outline {
+    color: $italy-dark-grey;
+    border: 1px solid $italy-dark-grey;
+    &:hover {
+      color: $white;
+      background-color: $italy-dark-grey;
+    }
+  }
+  &--outline-light {
+    color: $italy-dark-grey;
+    border: 1px solid $italy-grey;
+    &:hover {
+      background-color: $italy-grey;
+    }
+  }
+}
