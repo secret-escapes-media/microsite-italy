@@ -3,7 +3,7 @@
 
 // -------- root typography styles --------
 
-$core-font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+$core-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 $main-font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
 $title-font-family: 'Prata', 'Helvetica Neue', sans-serif;
 $subtitle-font-family: 'Oswald', 'Arial Narrow', sans-serif;
@@ -71,8 +71,8 @@ input, textarea, keygen, select, button {
     &--small       { font-size: 2.2em; }
   }
   @include bp(xxxlarge){
-    &--largest     { font-size: 8em; }
-    &--larger      { font-size: 6.133em; }
+    &--largest     { font-size: 6em; }
+    &--larger      { font-size: 4.833em; }
     &--large       { font-size: 3.533em; }
     &--medium      { font-size: 2.9em; }
   }
@@ -87,9 +87,12 @@ input, textarea, keygen, select, button {
 }
 
 p {
+  max-width: $xlarge;
   font-weight: 300;
   letter-spacing: .015em;
 }
+.align-center p,
+p.align-center { margin-left: auto; margin-right: auto; }
 
 .p {
   &--lead {
@@ -98,8 +101,54 @@ p {
   }
   &--large { font-size: 1.05em; }
   &--small { font-size: .85em; }
+
+  &--light     { font-weight: 300; }
+  &--bold      { font-weight: 500; }
+  &--bolder    { font-weight: 600; }
+  &--condense  { letter-spacing: 0; }
+  &--expanded  { letter-spacing: .1em; }
+  &--tight     { line-height: .9; }
+  &--tighter   { line-height: .8; }
+  &--upper     { text-transform: uppercase; }
+  &--italic    { font-style: italic; }
 }
 
+// -------- Lists ---------
+
+dl {
+  dt { margin-bottom: 5px; }
+  dd {}
+}
+
+.list {
+  &--horizontal {
+    list-style: none; padding: 0; margin: 0;
+    li {
+      display: inline-block; position: relative; padding: 0 1em;
+    }
+    li + li:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      height: 100%;
+      width: 1px;
+      background-color: rgba($white,0.1);
+      transform: translateY(-50%);
+    }
+  }
+  &--lined {
+    li {
+      list-style: none;
+      padding: 4px 0;
+    }
+    li + li {
+      border-top: 1px solid $black-25;
+      .invert-text & { border-top: 1px solid rgba($white,0.1); }
+    }
+  }
+}
 
 // -------- general content styles --------
 
@@ -112,10 +161,10 @@ strong        { font-weight: 800; }
 .align-left   { text-align: left; }
 .align-right  { text-align: right; }
 .align-center { text-align: center; }
-
 hr {
   border: 0;
   height: 1px;
   background-color: $light-grey;
   margin: 1em 0;
 }
+

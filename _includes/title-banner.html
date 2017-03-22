@@ -3,15 +3,21 @@
     <div class="title-banner__title row">
 
       {% if page.class != 'overview' %}
-        <span class="title title--sub title--smallest title--expanded">ITALY</span>
+        <span class="title title--sub title--smallest title--expanded title--upper">Italy{% if page.layout == 'destination' %} / {{ page.category }}{% endif %}</span>
       {% endif %}
 
-      <h1 class="page-title title title--larger title--expanded title--upper title--light">
+      <h1 class="page-title title {% if page.class == 'overview' %}title--largest{% else %}title--larger{% endif %} title--expanded title--upper title--light">
+
+        {% include decorations/title-before.html class="page-title--before" stroke="0.5" %}
+
         {% if page.banner-title %}
           {{ page.banner-title }}
         {% else %}
           {{ page.title }}
         {% endif %}
+
+        {% include decorations/title-after.html class="page-title--after" stroke="0.5" %}
+
       </h1>
 
       {% if page.banner-content %}
@@ -21,3 +27,4 @@
     </div>
   </div>
 </section>
+

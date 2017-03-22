@@ -7,45 +7,158 @@ layout: default
 {% include microsite-nav.html %}
 
 <section class="section bg--{{ page.category }} invert-text">
-  <div class="row row--padding">
-    <div class="row align-center">
+  <div class="row row--padding row--columns-8-4-gutters">
+    <div class="row__column">
       {{ page.intro }}
     </div>
+    <div class="row__column">
+      <h5 class="title">Jump to:</h5>
+      <ul class="list--lined">
+        <li><a href="#highlights" class="p--bolder p--expanded p--small">SIGHTS</a></li>
+        <li><a href="#nearby" class="p--bolder p--expanded p--small">NEARBY</a></li>
+        <li><a href="#offers" class="p--bolder p--expanded p--small">OFFERS</a></li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="row row--padding">
-    {% for poi in page.pois %}
-    {% if poi.featured %}
-      {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-      <div id="{{ poi.title | slugify }}" class="bob">
-        <div class="bob__image">
-          <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image: url('{{site.baseurl}}/img/content/{{ page.class }}/{{ poi.title | slugify }}.jpg');"></div>
-        </div>
-        <div class="bob__text">
-          <h3 class="title title--sub title--small title--color">{{ poi.title }}</h3>
-          <p>{{ poi.description }}</p>
-        </div>
-      </div>
-    {% endif %}
-    {% endfor %}
-  </div>
-</section>
 
-<section class="section">
+<!-- POIs
+  Coded in old grid system - below this is the new
+  bootstrap style grid system with responsive columns
+-->
+
+<!-- <section class="section decoration__trigger" id="highlights">
+  <div class="row row--padding align-center">
+    <h2 class="title title--medium title--color title--expanded title--light title--upper">Highlights</h2>
+    <p class="p--lead">Nulla vitae elit libero, a pharetra augue. Donec ullamcorper. Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla.</p>
+
+    {% include decorations/star.html class="badge badge--highlights" color="rgba(50,47,45,0.25)" stroke="0.4" %}
+  </div>
   <div class="row row--padding">
-    <div class="row pois">
+    <div class="row row--columns-4-4-4-gutters">
       {% for poi in page.pois %}
-      {% unless poi.featured %}
-        <div id="{{ poi.title | slugify }}" class="poi">
-          <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image: url('{{site.baseurl}}/img/content/{{ page.class }}/{{ poi.title | slugify }}.jpg');"></div>
-          <h3 class="title title--sub title--smallest title--color">{{ poi.title }}</h3>
-          <p>{{ poi.description }}</p>
-        </div>
-      {% endunless %}
+        <a
+          href="javascript:void(0);"
+          id="{{ poi.title | slugify }}"
+          class="poi row__column bg-image bg-image--ratio-3-2 invert-text js-open-modal"
+          data-modal="poi"
+          data-modal-item="{{ poi.class }}"
+          style="background-image: url('{{site.baseurl}}/img/content/{{ page.class }}/poi-{{ poi.class }}.jpg');">
+          <div class="bg-image__content">
+            <h3 class="bg-image__content__title bg-image__content__title-fade title title--sub title--smaller">{{ poi.title }}</h3>
+            <span class="bg-image__content__description">
+              <span class="title title--sub">{{ poi.title }}</span>
+              <p>{{ poi.description | truncate:120 }}</p>
+            </span>
+          </div>
+          <div class="bg-image__overlay"></div>
+        </a>
       {% endfor %}
     </div>
+  </div>
+</section> -->
+
+<!-- POIs -->
+
+<section class="section decoration__trigger" id="highlights">
+
+  <div class="container container--gutter container--vertical-gutter">
+
+    <div class="row">
+      <div class="col col-12 align-center">
+        <h2 class="title title--medium title--color title--expanded title--light title--upper">
+          {% if page.category == 'cities' %}
+            Hidden gems
+          {% else %}
+            Highlights
+          {% endif %}
+        </h2>
+        <p class="p--lead">Nulla vitae elit libero, a pharetra augue. Donec ullamcorper. Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla.</p>
+
+        {% include decorations/star.html class="badge badge--highlights" color="rgba(50,47,45,0.25)" stroke="0.4" %}
+      </div>
+    </div>
+
+    <div class="row">
+
+      {% for poi in page.featured-pois %}
+
+        <div class="col col-xlarge-6 col-large-6">
+          <a
+            href="javascript:void(0);"
+            id="{{ poi.title | slugify }}"
+            class="poi bg-image bg-image--ratio-3-2 invert-text js-open-modal"
+            data-modal="poi"
+            data-modal-item="{{ poi.class }}"
+            style="background-image: url('{{site.baseurl}}/img/content/{{ page.class }}/poi-{{ poi.class }}.jpg');">
+            <div class="bg-image__content">
+              <h3 class="bg-image__content__title bg-image__content__title-fade title title--sub title--smaller">{{ poi.title }}</h3>
+              <span class="bg-image__content__description">
+                <span class="title title--sub">{{ poi.title }}</span>
+                <p>{{ poi.description | truncate:120 }}</p>
+              </span>
+            </div>
+            <div class="bg-image__overlay"></div>
+          </a>
+        </div>
+
+      {% endfor %}
+
+      {% for poi in page.pois %}
+
+        {% assign loopindex = forloop.index | modulo: 3 %}
+        {% if loopindex == 1 %}<div class="col-row">{% endif %}
+
+          <div class="col col-xlarge-4 col-large-6">
+            <a
+              href="javascript:void(0);"
+              id="{{ poi.title | slugify }}"
+              class="poi bg-image bg-image--ratio-3-2 invert-text js-open-modal"
+              data-modal="poi"
+              data-modal-item="{{ poi.class }}"
+              style="background-image: url('{{site.baseurl}}/img/content/{{ page.class }}/poi-{{ poi.class }}.jpg');">
+              <div class="bg-image__content">
+                <h3 class="bg-image__content__title bg-image__content__title-fade title title--sub title--smaller">{{ poi.title }}</h3>
+                <span class="bg-image__content__description">
+                  <span class="title title--sub">{{ poi.title }}</span>
+                  <p>{{ poi.description | truncate:120 }}</p>
+                </span>
+              </div>
+              <div class="bg-image__overlay"></div>
+            </a>
+          </div>
+
+        {% if loopindex == 0 %}</div>{% endif %}
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- NEARBY -->
+<section class="section bg--italy-light-grey decoration__trigger" id="nearby">
+  <div class="row row--padding align-center">
+    <h2 class="title title--medium title--color title--expanded title--light title--upper">While you're here</h2>
+    <p class="p--lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+
+    {% include decorations/star.html class="badge badge--highlights" color="rgba(50,47,45,0.15)" stroke="0.4" %}
+  </div>
+  <div class="row row--padding">
+    {% for nearby in page.nearby %}
+      {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+      <div id="{{ nearby.title | slugify }}" class="bob nearby">
+        <div class="bob__image">
+          <div class="bg-image--ratio bg-image--ratio-3-2" style="background-image: url('{{site.baseurl}}/img/content/{{ page.class }}/nearby-{{ nearby.class}}.jpg');"></div>
+        </div>
+        <div class="bob__text">
+          <h3 class="title title--sub title--small title--color">{{ nearby.title }}</h3>
+          <h4 class="nearby__location">{{ nearby.location }}</h4>
+          <p>{{ nearby.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 </section>
 
@@ -53,9 +166,9 @@ layout: default
 <!-- OFFERS - FOR DESTINATION -->
 {% assign offers = site.data.offers | where: page.class, true | sort: 'price' %}
 {% if offers.size != 0 %}
-  <section class="section offers">
+  <section class="section bg--light-grey" id="offers">
     <div class="row row--padding">
-      <h2 class="align-center title title--medium title--color title--light title--expanded">{{ page.title }} Offers</h2>
+      <h2 class="align-center title title--medium title--color title--light title--expanded title--upper">{{ page.title }} Offers</h2>
     </div>
     <div class="row row--padding">
       {% for offer in offers %}
@@ -82,3 +195,43 @@ layout: default
   </section>
 {% endif %}
 
+
+
+
+
+<div class="js-modal modal modal--vertical-align is-closed" id="modal-poi">
+
+  <div class="modal__wrap row">
+    <div class="modal__content" id="modal__slider">
+
+      {% for poi in page.pois %}
+      <div class="slide modal__item modal__item-inactive row row--columns-6-6 row--columns-vertical-align" id="modal__item-{{ poi.class }}">
+
+        <div class="row__column modal__item__content">
+          <h2 class="title title--small title--bold">{{ poi.title }}</h2>
+          <p class="paragraph--small paragraph--upper paragraph--tracking">{{ poi.location }}</p>
+          <p>{{ poi.description }}</p>
+        </div>
+
+        <div class="row__column">
+          <div class="js-close-modal modal__close"></div>
+          <div class="bg-image--ratio-3-2" style="background-image: url('{{ site.baseurl }}/img/content/{{ page.class }}/poi-{{ poi.class }}.jpg');">
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+
+      <!-- MODAL SLIDER NAVIGATION -->
+      <div class="modal__slider-nav">
+        <a class="modal__slider-previous" id="modal_slider--previous" href="javascript:void(0);">
+          <img class="js-svg-swap" width="20" src="{{ site.baseurl }}/img/icons/arrow-left-white.png" alt="<">
+        </a>
+        <a class="modal__slider-next" id="modal_slider--next" href="javascript:void(0);">
+          <img class="js-svg-swap" width="20" src="{{ site.baseurl }}/img/icons/arrow-right-white.png" alt=">">
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>

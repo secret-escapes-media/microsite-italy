@@ -5,8 +5,8 @@
       {% assign site-sections = site.html_pages | sort:"nav-order" %}
       {% for section in site-sections %}
       {% if section.nav-order %}
-        <li class="site-nav__item site-nav__item--{{ section.title | slugify }}{% if section.class == page.class %} site-nav__item--current{% endif %}">
-          <a class="site-nav__link" href="{{ site.baseurl }}{{ section.url }}">{{section.title}}</a>
+        <li class="site-nav__item site-nav__item--{{ section.title | slugify }}">
+          <a class="site-nav__link{% if section.class == page.class %} site-nav__link--current{% endif %}" href="{{ site.baseurl }}{{ section.url }}">{{section.title}}</a>
           {% if section.layout == "category" %}
             {% include category-nav.html context=section.url %}
           {% endif %}

@@ -133,7 +133,7 @@ $site-nav-height: 70px;
 $nav-arrow-width: 66px;
 .site-nav {
   height: $site-nav-height;
-  font-family: $core-font-family;
+  font-family: $main-font-family;
   text-align: center;
   font-weight: 600;
   font-size: 12px;
@@ -179,6 +179,11 @@ $nav-arrow-width: 66px;
     border-left: .5px solid $light-grey;
     @include transition;
     &:last-of-type { border-right: .5px solid $light-grey; }
+  }
+  &__link {
+    display: inline-block;
+    padding-left: 2em;
+    padding-right: 2em;
     &--current {
       color: $italy-red;
       background-color: $light-grey;
@@ -187,17 +192,13 @@ $nav-arrow-width: 66px;
     &:hover {
       background-color: $light-grey;
       border-color: $light-grey;
+      text-decoration: none;
     }
-    // changes neighbour item border
-    &:hover + & { border-color: $light-grey; }
   }
-  &__link {
-    display: inline-block;
-    padding-left: 2em;
-    padding-right: 2em;
-    &:hover,
-    &--current { text-decoration: none; }
-  }
+
+  &__item--cities &__link--current { color: $italy-charcoal; }
+  &__item--landscapes &__link--current { color: $italy-green; }
+
   @include bp(medium){
     overflow: visible;
     height: auto;
@@ -259,11 +260,15 @@ $nav-arrow-width: 66px;
     display: table;
     width: 100%;
     height: 100%;
-    background-color: rgba($italy-red,0.5);
+    background-color: rgba($italy-dark-grey,0.5);
+    font-family: $title-font-family;
+    letter-spacing: 0.3em;
+    font-size: 1.4em;
+    font-weight: 400;
     &:hover {
-      background-color: rgba($italy-red,0.2);
+      background-color: rgba($italy-dark-grey,0.2);
       text-decoration: none;
-      letter-spacing: .225em
+      letter-spacing: .35em
     }
     &-wrap {
       display: table-cell;
@@ -366,7 +371,7 @@ $mobile-nav-width: 75%;
   }
   p { margin-top: .5em; }
   .logo--secret-escapes { max-width: 110px; }
-  .logo--partner { max-width: 69px; }
+  .logo--partner { max-width: 50px; }
 }
 
 

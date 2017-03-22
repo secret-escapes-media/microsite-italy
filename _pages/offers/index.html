@@ -6,9 +6,27 @@ class: offers
 
 banner-title: Offers
 banner-content:
+
+intro-short: >
+  Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+intro: >
+  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla.</p>
+  <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur.</p>
+
 ---
 
+
+{% if page.intro  %}
 <section class="section">
+  <div class="row row--padding">
+    <div class="row align-center">
+      {{ page.intro }}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section bg--light-grey">
   <div class="row row--padding">
     {% include offers.html type="half-width" %}
   </div>
@@ -20,8 +38,8 @@ banner-content:
     <div class="offer-promo__bg" style="background-image: url('{{ site.baseurl }}/img/offers/00-general-current-sales/02.jpg')"></div>
     <div class="offer-promo__bg" style="background-image: url('{{ site.baseurl }}/img/offers/00-general-current-sales/03.jpg')"></div>
   </div>
-  <div class="row row--padding offer-promo__content">
-    <h2 class="title title--medium title--light title--expanded title--margin-none">That’s not all we do...</h2>
+  <div class="row row--padding offer-promo__content align-center invert-text">
+    <h2 class="title title--medium title--light title--expanded title--upper">That’s not all we do...</h2>
     <p class="p--lead">Didn’t see anything in Norway to take your fancy? Well, we have loads more offers with savings of up to 70%!</p>
     <a href="https://www.secretescapes.com/current-sales" class="btn btn--orange">See All Current Sales</a>
   </div>

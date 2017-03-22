@@ -16,8 +16,12 @@ $margin: 1.6em;
 // -------- grid sections --------
 
 .section {
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  &--padding-small { padding-top: 1em; padding-bottom: 1em; }
+  &--padding-medium { padding-top: 2.5em; padding-bottom: 2.5em; }
+  &--padding-large { padding-top: 6em; padding-bottom: 6em; }
+  &--padding-none { padding-top: 0; padding-bottom: 0; }
 }
 
 .row {
@@ -111,9 +115,86 @@ $margin: 1.6em;
 }
 
 
+// -------- background image ratios --------
+
+.bg-image {
+
+  // Size div to aspect ratio with background image attributes
+  &--ratio-1-1, &--ratio-4-3, &--ratio-3-2, &--ratio-16-9, &--ratio-21-9 {
+    display: block;
+    position: relative;
+    background-color: $grey;
+    @include background-attributes();
+    .flexbox & {
+      display: flex;
+      align-items: center;
+    }
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+    }
+  }
+  &--ratio-1-1:before   { padding-top: 100%; }
+  &--ratio-4-3:before   { padding-top: 75%; }
+  &--ratio-3-2:before   { padding-top: 66.666666666667%; }
+  &--ratio-16-9:before  { padding-top: 56.25%; }
+  &--ratio-21-9:before  { padding-top: 42.8571429%; }
+
+  &--circle { border-radius: 9999999em; }
+  &--shadow {}
+
+  // Vertically centred content in bg-image
+  &__content {
+    @include transition();
+    z-index: $z-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: $white;
+    background-color: rgba($italy-charcoal, 0.25);
+    text-align: center;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .flexbox & {}
+    &__title,
+    &__description {
+      @include transition();
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      padding: 1em;
+    }
+    &__title {
+      opacity: 1;
+      z-index: $z-content;
+    }
+    &__description {
+      @include transition();
+      opacity: 0;
+      margin: 0;
+      z-index: $z-content-upper;
+    }
+  }
+  &:hover {
+    .bg-image__content {
+      background-color: rgba($italy-charcoal, 0.8);
+      &__title { letter-spacing: 0.09em; }
+      &__title-fade { letter-spacing: 0.09em; opacity: 0.1; }
+      &__description { opacity: 1; }
+    }
+  }
+}
+
 
 // Bob is a type of layout that we use frequently for featured content. We
-// couldn't think of an accurate and consise name so we called it Bob. Its
+// couldn't think of an accurate and concise name so we called it Bob. Its
 // columns with a feature image and copy that swap columns in alternating order.
 // it needs a higher breakpoint than the rest of the grid amongst other things
 .bob {
@@ -149,6 +230,49 @@ $margin: 1.6em;
         align-items: center;
         flex-direction: row-reverse;
       }
-    }  // END GRID STUFF
+    }
   }
+}
+
+
+// Harvey is Bob's second cousin on his Mother's side. He was a troubled
+// youth and, after years of medical examination Harvey was diagnosed with
+// multipersonality disorder. It is this disorder which allows him to build
+// the following two sided image/text layouts.
+// Harvey is a 50/50 text image layout with no gutter. Use Harvey to make
+// an alternating full width section with centred text, and limited height
+// image sizing so the layout works across screens and sizes.
+.harvey {
+  @include container(100%);
+  @include layout(12 0);
+  text-align: center;
+  &__image {
+    min-height: $small;
+  }
+  &__text {
+    padding: $margin*2;
+  }
+  & + & { margin: 0; padding: 0; }
+
+  @include bp(xlarge){
+    .flexbox & {
+      display: flex;
+      align-items: center;
+    }
+    &__image { @include span(6); }
+    &__text {
+      @include span(6 last);
+      padding-top: 0;
+    }
+    &:nth-child(odd){
+      .harvey__image { @include span(6 last); }
+      .harvey__text { @include span(6); }
+      .flexbox & {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
 }

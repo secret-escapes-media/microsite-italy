@@ -1,0 +1,104 @@
+
+/*   SVG DECORATIONS
+ * =========================== */
+
+ $draw-length: 500;
+ $long-draw-length: 800;
+
+ // Keyframe animations for drawing in decorations
+ // -- normal draw in
+ @keyframes draw-in {
+   from { stroke-dashoffset: -$draw-length; } to { stroke-dashoffset: 0; }
+ }
+ @keyframes draw-out {
+   from { stroke-dashoffset: 0; } to { stroke-dashoffset: -$draw-length; }
+ }
+ // -- alternative draw in for longer/more complex svg
+ @keyframes long-draw-in {
+   from { stroke-dashoffset: -$long-draw-length; } to { stroke-dashoffset: 0; }
+ }
+ @keyframes long-draw-out {
+   from { stroke-dashoffset: 0; } to { stroke-dashoffset: -$long-draw-length; }
+ }
+
+
+.decoration {
+  overflow: hidden;
+  display: block;
+  pointer-events: none;
+  svg {
+    width: 100%;
+    display: block;
+  }
+  /* styling before animation */
+  .path {
+    stroke-dashoffset: -$draw-length;
+    stroke-dasharray: $draw-length;
+    animation: draw-out 3s ease-in-out forwards;
+  }
+  /* when .decoration gets class .animate, use the keyframe animation
+   * "draw" to move the dashes into the shape over 3 seconds */
+  &.animate .path { animation: draw-in 3s ease-in-out forwards; }
+
+}
+
+.animated-hr {
+  @include transition();
+  width: 300px;
+  height: 0px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  &.animate .path { animation: draw-in 0.3s ease-in-out forwards; }
+  .decoration-triggered & {
+    margin-top: 20px;
+    height: 18px;
+  }
+}
+
+.badge {
+  position: relative;
+
+  .path {
+    animation: long-draw-out 3s ease-in-out forwards;
+    stroke-dashoffset: -$long-draw-length !important;
+    stroke-dasharray: $long-draw-length !important;
+  }
+  &.animate {
+    .path { animation: long-draw-in 3s ease-in-out forwards; }
+  }
+
+  &__text {
+    @include transition();
+    display: block;
+    padding: 2em;
+    padding-top: 4em;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.3em;
+    opacity: 0;
+    .animate & {
+      padding-top: 2em;
+      opacity: 1;
+    }
+  }
+
+  // Variations on badge
+  &--star {
+    width: 100%;
+    max-width: 200px;
+  }
+  &--highlights {
+    width: 100%;
+    max-width: 500px;
+    position: absolute;
+    top: -250px;
+    right: 50%;
+    margin-right: -250px;
+  }
+}

@@ -1,7 +1,6 @@
-// all custom styles for the site
 
-
-// ---------- GENERAL STYLES ----------
+/*   GENERAL STYLES
+ * =========================== */
 
 .invert-text {
   color: $white;
@@ -9,7 +8,7 @@
 }
 
 .bg {
-  &--light-grey       { background-color: $italy-light-grey; }
+  &--light-grey       { background-color: $light-grey; }
   &--italy-red        { background-color: $italy-red; }
   &--italy-brown      { background-color: $italy-brown; }
   &--italy-green      { background-color: $italy-green; }
@@ -18,9 +17,162 @@
   &--italy-light-grey { background-color: $italy-light-grey; }
   &--italy-grey       { background-color: $italy-grey; }
   &--italy-dark-grey  { background-color: $italy-dark-grey; }
-  &--cities           { background-color: $italy-dark-grey; }
+  &--italy-black       { background-color: $light-grey; }
+  &--cities           { background-color: $italy-charcoal; }
   &--landscapes       { background-color: $italy-green; }
 }
+
+
+
+/*   BUTTONS
+ * =========================== */
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: .833em 4em;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  @include transition;
+  line-height: 1.33;
+  text-align: center;
+  &:hover { text-decoration: none; }
+  * + & { margin-top: 1.5em; }
+  &--arrow {
+    $arrow-height: 14px;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      display: block;
+      width: 8px;
+      height: $arrow-height;
+      margin-top: -($arrow-height/2);
+      background-image: url(../img/icons/btn-arrow-white.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      .svg & { background-image: url(../img/icons/btn-arrow-white.svg); }
+    }
+  }
+  &--large {
+    padding: 0.8em 4em;
+    font-size: 15px;
+  }
+  &--white { background-color: rgba($white, .3);
+    &:hover { background-color: rgba($white, .5);}
+  }
+  &--green { background-color: $italy-green;
+    &:hover { background-color: darken($italy-green, 10)}
+  }
+  &--orange { background-color: $se-orange;
+    &:hover { background-color: darken($se-orange, 5)}
+  }
+  &--outline {
+    color: $italy-dark-grey;
+    border: 1px solid $italy-dark-grey;
+    &:hover {
+      color: $white;
+      background-color: $italy-dark-grey;
+    }
+  }
+  &--outline-light {
+    color: $italy-dark-grey;
+    border: 1px solid $italy-grey;
+    &:hover {
+      background-color: $italy-grey;
+    }
+  }
+  &--invert {
+    color: $white;
+    border: 1px solid $white;
+    &:hover {
+      background-color: $white;
+      color: $italy-charcoal;
+    }
+  }
+}
+
+
+/*   OVERVIEW PAGE
+ * =========================== */
+
+
+
+ /*   CATEGORY PAGE
+  * =========================== */
+
+
+
+/*   DESTINATION PAGE
+ * =========================== */
+
+#highlights {
+  overflow: hidden;
+}
+#nearby {
+  overflow: hidden;
+}
+
+// ----- POIs on destination pages ------
+
+.poi {
+  .bg-image__content:after {
+    @include transition();
+    content: "";
+    position: absolute;
+    top: 4px; left: 4px; right: 4px; bottom: 4px;
+    border: 1px solid #fff;
+  }
+  &:hover {
+    .bg-image__content:after {
+      border: 1px solid rgba(255,255,255,0.2);
+      top: 2px; left: 2px; right: 2px; bottom: 2px;
+    }
+  }
+}
+
+
+// ----- Nearby -----
+
+.nearby {
+  &__location {
+    margin-top: 1em;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+    text-indent: -1.5em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 1.5em;
+      width: 1.05em;
+      margin-right: .5em;
+      margin-bottom: .2em;
+      vertical-align: middle;
+      background-image: url( "../img/icons/map-pin.png" );
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-size: contain;
+      .svg & { background-image: url( "../img/icons/map-pin.svg" ); }
+    }
+  }
+}
+
+
+
+/*   OFFER PAGE
+ * =========================== */
 
 .offer-promo {
   position: relative;
@@ -62,65 +214,3 @@
   }
 }
 
-
-// ---------- button ----------
-
-.btn {
-  position: relative;
-  display: inline-block;
-  padding: .833em 4em;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
-  @include transition;
-  line-height: 1.33;
-  text-align: center;
-  &:hover { text-decoration: none; }
-  * + & { margin-top: 1.5em; }
-  &--arrow {
-    $arrow-height: 14px;
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 8px;
-      display: block;
-      width: 8px;
-      height: $arrow-height;
-      margin-top: -($arrow-height/2);
-      background-image: url(../img/icons/btn-arrow-white.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      .svg & { background-image: url(../img/icons/btn-arrow-white.svg); }
-    }
-  }
-  &--white { background-color: rgba($white, .3);
-    &:hover { background-color: rgba($white, .5);}
-  }
-  &--red { background-color: $italy-red;
-    &:hover { background-color: darken($italy-red, 10)}
-  }
-  &--orange { background-color: $se-orange;
-    &:hover { background-color: darken($se-orange, 5)}
-  }
-  &--outline {
-    color: $italy-dark-grey;
-    border: 1px solid $italy-dark-grey;
-    &:hover {
-      color: $white;
-      background-color: $italy-dark-grey;
-    }
-  }
-  &--outline-light {
-    color: $italy-dark-grey;
-    border: 1px solid $italy-grey;
-    &:hover {
-      background-color: $italy-grey;
-    }
-  }
-}

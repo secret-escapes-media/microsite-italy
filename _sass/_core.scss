@@ -43,10 +43,11 @@ $italy-light-blue:   #c5e6e3;
 $italy-light-grey:   #f4f2eb;
 $italy-grey:         #adaca6;
 $italy-dark-grey:    #585752;
+$italy-charcoal:     #322f2d;
 
-$text-black:      #4d4d4d;
+$text-black:      #5e5e5e;
 $text-grey:       #808080;
-$title-black:     #4f5762;
+$title-black:     #2a2a2a;
 $paragraph-black: #666666;
 
 
@@ -173,29 +174,6 @@ $z-content-upper:   5;
 $z-content:         0;
 $z-background:      -1;
 
-
-// -------- background image ratios --------
-
-.bg-image-ratio {
-  position: relative;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: $grey;
-  &:before {
-    display: block;
-    content: "";
-    width: 100%;
-  }
-  &--circle {
-    border-radius: 9999999em;
-  }
-  &--1-1:before   { padding-top: 100%; }
-  &--4-3:before   { padding-top: 75%; }
-  &--3-2:before   { padding-top: 66.666666666667%; }
-  &--16-9:before  { padding-top: 56.25%; }
-  &--21-9:before  { padding-top: 42.8571429%; }
-}
 
 
 // -------- generic styles --------

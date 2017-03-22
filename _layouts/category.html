@@ -20,36 +20,20 @@ layout: default
 
 {% assign category-pages = site.pages | where: "category", page.class %}
 {% for category-page in category-pages %}
-  <section class="section{% cycle '', ' bg--italy-light-grey' %}">
-    <div class="row row--padding">
-      <div class="row align-center">
-        <h2 class="align-center title title--large title--color title--expanded title--light">
-          <a class="a--plain" href="{{ category-page.url }}">
-            {{ category-page.title }}
-          </a>
-        </h2>
-        <p class="line-length line-length--center p--large">{{ category-page.intro-short }}</p>
-      </div>
+  <section class="harvey section clearfix section--padding-none{% cycle '', ' bg--italy-light-grey' %}">
+
+    <div class="harvey__text align-center">
+      <h2 class="align-center title title--medium title--expanded title--light title--upper">
+        <a class="a--plain" href="{{ category-page.url }}">
+          {{ category-page.title }}
+        </a>
+      </h2>
+      <p class="p--lead">{{ category-page.intro-short | truncate: 200 }}</p>
+      <a href="{{ category-page.url }}" class="btn btn--green btn--large">See {{ category-page.title }}</a>
     </div>
-    <div class="row row--padding">
-      <div class="row">
-        {% assign featured-pois = category-page.pois | where: 'featured', 'true' %}
-        {% for poi in featured-pois %}
-          <div class="featured-poi invert-text">
-            <a href="{{ category-page.url }}#{{ poi.class }}">
-              <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image: url('{{site.baseurl}}/img/content/{{ category-page.class }}/{{ poi.class }}.jpg');">
-                <div class="featured-poi__overlay">
-                  <h3 class="title title--sub title--small">{{ poi.title }}</h3>
-                </div>
-              </div>
-            </a>
-          </div>
-        {% endfor %}
-      </div>
-      <div class="align-center">
-        <a href="{{ category-page.url }}" class="btn btn--red">See {{ category-page.title }}</a>
-      </div>
-    </div>
+
+    <a href="{{ category-page.url }}" class="harvey__image bg-image bg-image--ratio bg-image--ratio-3-2" style="background-image: url({{site.baseurl}}/img/bg/banner-{{ category-page.class }}.jpg);"></a>
+
   </section>
 {% endfor %}
 

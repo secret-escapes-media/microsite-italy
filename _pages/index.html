@@ -10,24 +10,8 @@ banner-content:
 intro-short: >
   Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 intro: >
-  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla.</p>
+  <p class="p--lead">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
   <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur.</p>
-
-page-sections:
-
-  - title: Food
-    class: food
-    cta-label: Find out more
-    link:
-    description: >
-      <p>Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-  - title: Culture
-    class: culture
-    cta-label: Find out more
-    link:
-    description: >
-      <p>Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
 ---
 
@@ -36,68 +20,48 @@ page-sections:
 
 {% include microsite-nav.html %}
 
-<!-- MAIN FEATURES -->
+
+{% if page.intro  %}
 <section class="section">
   <div class="row row--padding">
-
-    {% for section in page.page-sections %}
-    <div class="bob">
-      <div class="bob__image">
-        <a href="{{ section.link }}">
-          <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image: url('{{site.baseurl}}/img/content/overview/{{ section.class }}.jpg');"></div>
-        </a>
-      </div>
-      <div class="bob__text">
-        <h2 class="title title--sub title--medium title--color title--light title--light">{{ section.title }}</h2>
-        {{ section.description }}
-        <a href="{{ section.link }}" class="btn btn--red">{{ section.cta-label }}</a>
-      </div>
+    <div class="row align-center">
+      {{ page.intro }}
     </div>
-    {% endfor %}
-
   </div>
 </section>
+{% endif %}
 
 
-<!-- SUB FEATURES -->
-<section class="section bg--light-grey">
-  <div class="row row--extra-margin row--columns-6-6-gutters row--padding align-center">
+<!-- CATEGORY PAGES -->
+<section class="section section--padding-none clearfix decoration__trigger">
+  <div class="row--columns-6-6 align-center invert-text">
+
     {% assign category-pages = site.pages | where: "layout", "category" %}
     {% for category-page in category-pages %}
-    <div class="row__column">
-      <h3 class="title title--small title--color title--margin">{{ category-page.title }}</h3>
-      <div class="row">
-        {% assign destination-pages = site.pages | where: "category", "cities" %}
-        {% for destination-page in destination-pages %}
-          {% for poi in destination-page.pois %}
-            {% if poi.overview == true %}
-              <!-- <p>{{poi.feature-title}}</p> -->
-              <div class="featured-poi featured-poi--overview">
-                <a href="{{ destination-page.url }}">
-                  <div class="bg-image-ratio bg-image-ratio--3-2" style="background-image: url('{{ site.baseurl }}/img/content/{{ destination-page.class }}/{{ poi.title | slugify }}.jpg');">
-                    <div class="featured-poi__overlay">
-                      <h3 class="title title--sub title--small title--upper">{{ poi.title }}</h3>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
+
+    <a href="{{ category-page.url }}" class="row__column bg-image bg-image--ratio-3-2 invert-text" style="background-image: url('{{ site.baseurl }}/img/bg/banner-{{ category-page.class }}.jpg');">
+      <div class="bg-image__content">
+
+        <div class="category-link">
+          <h3 class="title title--sub title--small title--upper title--margin-none">{{ category-page.title }}</h3>
+          {% include decorations/hr.html class="animated-hr" %}
+          <span class="btn btn--invert">See More {{ category-page.title }}</span>
+        </div>
+
       </div>
-      <div class="align-center">
-        <a href="{{ category-page.url }}" class="btn btn--outline">See More {{ category-page.title }}</a>
-      </div>
-    </div>
+      <div class="bg-image__overlay"></div>
+    </a>
+
     {% endfor %}
   </div>
 </section>
 
 
 <!-- OFFERS - ONLY 2 -->
-<section class="section">
+<section class="section bg--light-grey decoration__trigger">
   <div class="row row--padding">
-    <h2 class="align-center title title--medium title--color title--expanded title--light">Offers</h2>
+    <h2 class="align-center title title--medium title--color title--expanded title--light title--upper">Offers</h2>
+    {% include decorations/hr.html class="animated-hr" color="rgba(0,0,0,0.4)" %}
   </div>
   <div class="row row--padding">
     {% assign offers = site.data.offers | sort: 'price' %}

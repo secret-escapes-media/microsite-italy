@@ -52,60 +52,129 @@
   }
 
 
-///////////////////////////////////////
-//    Generic modal
-///////////////////////////////////////
+  ///////////////////////////////////////
+  //    Generic modal
+  ///////////////////////////////////////
 
   var modal          = $('.js-modal'),
       modalLaunchBtn = $('.js-open-modal'),
-      modalCloseBtn  = $('.js-close-modal');
+      modalCloseBtn  = $('.js-close-modal'),
+      modalCloseAreas  = $('.modal__content, .js-modal');
 
-    // opens modal
-    function modalOpen(event){
-      event.preventDefault();
-      // disable scrolling on background content (doesn't work iOS)
-      $('body').addClass('disable-scroll');
-      // // open modal
-      modal.fadeIn('250', function(){
-        $(this).removeClass('is-closed').addClass('is-open');
-      });
+  modalLaunchBtn.click(function(){
+
+    var targetModal = $(this).attr('data-modal');
+    var modalItem = $(this).attr('data-modal-item');
+
+    if(modalItem){
+      $('.modal__item').addClass('modal__item-inactive');
+      $('#modal__item-' + modalItem ).removeClass('modal__item-inactive');
     }
 
-    // closes modal
-    function modalClose(event){
-      event.preventDefault();
-      // enable scrolling
-      $('body').removeClass('disable-scroll');
-      // close modal with fade
-      modal.fadeOut('250', function(){
-        $(this).removeClass('is-open').addClass('is-closed');
-      });
+    // disable scrolling on background content (doesn't work iOS)
+    $('body').addClass('disable-scroll');
+    // // open modal
+    $('#modal-' + targetModal).fadeIn('250', function(){
+      $(this).removeClass('is-closed').addClass('is-open');
+    });
+
+  });
+
+  // closes modal
+  function modalClose(event){
+    event.preventDefault();
+    // enable scrolling
+    $('body').removeClass('disable-scroll');
+    // close modal with fade
+    modal.fadeOut('250', function(){
+      $(this).removeClass('is-open').addClass('is-closed');
+    });
+  }
+
+  // closes modal on close icon click
+  modalCloseBtn.on('click', function(event) {
+    modalClose(event);
+  });
+
+  // closes modal on background click
+  modalCloseAreas.on('click', function(event) {
+    if (event.target !== this){
+      return;
     }
+    modalClose(event);
+  });
 
-    // launches modal when offer is clicked
-    modalLaunchBtn.on('click', function(event) {
-      modalOpen(event);
-    });
-
-    // closes modal on close icon click
-    modalCloseBtn.on('click', function(event) {
-      modalClose(event);
-    });
-
-    // closes modal on background click
-    modal.on('click', function(event) {
-      if (event.target !== this){
-        return;
+  // closes modal on escape key press
+  $(document).keyup(function(event) {
+     if (event.keyCode == 27) {
+       modalClose(event);
       }
-      modalClose(event);
-    });
+  });
 
-    // closes modal on escape key press
-    $(document).keyup(function(event) {
-       if (event.keyCode == 27) {
-         modalClose(event);
-        }
+
+  function GetQueryStringParams(sParam){
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++){
+      var sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] == sParam){
+        return sParameterName[1];
+      }
+    }
+  }​
+
+
+  // launches modal if query string
+  var modalQuery = GetQueryStringParams('modal');
+
+  if (modalQuery) {
+    var targetModal = modalQuery;
+    $('body').addClass('disable-scroll');
+    $('#modal-' + targetModal).fadeIn('250', function(){
+      $(this).removeClass('is-closed').addClass('is-open');
     });
+  }
+
+
+  ///////////////////////////////////////
+  //    Modal Carousel
+  ///////////////////////////////////////
+
+  function modal_slider_next(){
+    var parent    = $('#modal__slider');
+    var current   = parent.find('.slide').not(".modal__item-inactive");
+    var next = current.next('.slide');
+
+    if( next.length == 0 ) {
+      var next = parent.find('.slide').first();
+    }
+    current.addClass('modal__item-inactive');
+    next.removeClass('modal__item-inactive');
+  }
+
+  function modal_slider_previous(){
+    var parent    = $('#modal__slider');
+    var current   = parent.find('.slide').not(".modal__item-inactive");
+    var previous = current.prev('.slide');
+
+    if( previous.length == 0 ) {
+      var previous = parent.find('.slide').last();
+    }
+    current.addClass('modal__item-inactive');
+    previous.removeClass('modal__item-inactive');
+  }
+
+
+  $('#modal_slider--next').click(function(){ modal_slider_next(); });
+  $('#modal_slider--previous').click(function(){ modal_slider_previous(); });
+
+  $(document).on('keyup', function(e) {
+    if(e.which === 37){
+      modal_slider_previous();
+    }else if(e.which === 39) {
+      modal_slider_next();
+    }
+  });
 
 
 ///////////////////////////////////////
@@ -129,6 +198,30 @@ $('.js-offer-expires').each(function() {
     }
   });
 });
+
+
+
+
+///////////////////////////////////////
+//       SVG Animation triggers
+///////////////////////////////////////
+
+
+$('.title-banner .decoration').addClass('animate');
+
+
+$(window).scroll(function(){
+  var scrolltop = $(document).scrollTop();
+  var topoffset = ( $(window).height() ) * 0.2 ;
+  $('.decoration__trigger').each(function(){
+    var targetoffset = $(this).offset().top - topoffset;
+    if(scrolltop >= targetoffset ){
+      $(this).addClass('decoration-triggered');
+      $(this).find('.decoration').addClass('animate');
+    }
+  });
+});
+
 
 
 
