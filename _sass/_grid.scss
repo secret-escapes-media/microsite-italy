@@ -115,84 +115,6 @@ $margin: 1.6em;
 }
 
 
-// -------- background image ratios --------
-
-.bg-image {
-
-  // Size div to aspect ratio with background image attributes
-  &--ratio-1-1, &--ratio-4-3, &--ratio-3-2, &--ratio-16-9, &--ratio-21-9 {
-    display: block;
-    position: relative;
-    background-color: $grey;
-    @include background-attributes();
-    .flexbox & {
-      display: flex;
-      align-items: center;
-    }
-    &:before {
-      display: block;
-      content: "";
-      width: 100%;
-    }
-  }
-  &--ratio-1-1:before   { padding-top: 100%; }
-  &--ratio-4-3:before   { padding-top: 75%; }
-  &--ratio-3-2:before   { padding-top: 66.666666666667%; }
-  &--ratio-16-9:before  { padding-top: 56.25%; }
-  &--ratio-21-9:before  { padding-top: 42.8571429%; }
-
-  &--circle { border-radius: 9999999em; }
-  &--shadow {}
-
-  // Vertically centred content in bg-image
-  &__content {
-    @include transition();
-    z-index: $z-content;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    color: $white;
-    background-color: rgba($italy-charcoal, 0.25);
-    text-align: center;
-    padding: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .flexbox & {}
-    &__title,
-    &__description {
-      @include transition();
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      padding: 1em;
-    }
-    &__title {
-      opacity: 1;
-      z-index: $z-content;
-    }
-    &__description {
-      @include transition();
-      opacity: 0;
-      margin: 0;
-      z-index: $z-content-upper;
-    }
-  }
-  &:hover {
-    .bg-image__content {
-      background-color: rgba($italy-charcoal, 0.8);
-      &__title { letter-spacing: 0.09em; }
-      &__title-fade { letter-spacing: 0.09em; opacity: 0.1; }
-      &__description { opacity: 1; }
-    }
-  }
-}
-
-
 // Bob is a type of layout that we use frequently for featured content. We
 // couldn't think of an accurate and concise name so we called it Bob. Its
 // columns with a feature image and copy that swap columns in alternating order.
@@ -247,10 +169,9 @@ $margin: 1.6em;
   @include layout(12 0);
   text-align: center;
   &__image {
-    min-height: $small;
   }
   &__text {
-    padding: $margin*2;
+    padding: $margin;
   }
   & + & { margin: 0; padding: 0; }
 
@@ -259,10 +180,13 @@ $margin: 1.6em;
       display: flex;
       align-items: center;
     }
-    &__image { @include span(6); }
+    &__image {
+      @include span(6);
+      min-height: $small;
+    }
     &__text {
       @include span(6 last);
-      padding-top: 0;
+      padding: $margin*2;
     }
     &:nth-child(odd){
       .harvey__image { @include span(6 last); }

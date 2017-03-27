@@ -18,7 +18,7 @@ layout: default
 {% endif %}
 
 
-{% assign category-pages = site.pages | where: "category", page.class %}
+{% assign category-pages = site.pages | where: "category", page.class | sort:'destination-order' %}
 {% for category-page in category-pages %}
   <section class="harvey section clearfix section--padding-none{% cycle '', ' bg--italy-light-grey' %}">
 
@@ -41,7 +41,7 @@ layout: default
 <!-- OFFERS - FOR CATEGORY -->
 <section class="section offers">
   <div class="row row--padding">
-    <h2 class="align-center title title--medium title--color title--light title--expanded">{{ page.title }} Offers</h2>
+    <h2 class="align-center title title--medium title--light title--expanded title--upper">{{ page.title }} Offers</h2>
   </div>
   <div class="row row--padding">
     {% assign offers = site.data.offers | where: "category", page.class | sort: 'price' %}
