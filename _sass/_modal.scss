@@ -58,10 +58,15 @@
     border-radius: 5px;
     overflow: hidden;
     display: block;
-    .flexbox & { display: flex;}
+    .flexbox & {
+      display: block;
+      @include bp(large) {
+        display: flex;
+      }
+    }
     &-inactive { display: none !important; }
     &__content {
-      padding: 2.5em 1.5em 1em;
+      padding: 0 1.5em 1.5em;
       @include bp(large) {
         padding: 1.5em 2em;
       }

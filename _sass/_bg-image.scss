@@ -10,10 +10,6 @@
     position: relative;
     background-color: $grey;
     @include background-attributes();
-    .flexbox & {
-      display: flex;
-      align-items: center;
-    }
     &:before {
       display: block;
       content: "";
@@ -93,6 +89,7 @@
     background-color: rgba($italy-charcoal, 0.25);
     text-align: center;
     padding: 2em;
+    display: -webkit-flex;
     display: flex;
     align-items: center;
     justify-content: center;

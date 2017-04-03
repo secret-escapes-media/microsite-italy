@@ -228,17 +228,17 @@ layout: default
       {% for poi in page.featured-pois %}
       <div class="slide modal__item modal__item-inactive row row--columns-6-6 row--columns-vertical-align" id="modal__item-{{ poi.class }}">
 
+        <div class="row__column">
+          <div class="js-close-modal modal__close"></div>
+          <div class="bg-image bg-image--ratio-16-9 bg-image--large--ratio-3-2" style="background-image: url('{{ site.baseurl }}/img/content/{{ page.class }}/poi-{{ poi.class }}.jpg');">
+            {% if poi.hidden-gem %}{% include decorations/hidden-gem.html class="hidden-gem" stroke="2" %}{% endif %}
+          </div>
+        </div>
+
         <div class="row__column modal__item__content">
           <h2 class="title title--small title--bold">{{ poi.title }}</h2>
           <p class="paragraph--small paragraph--upper paragraph--tracking">{{ poi.location }}</p>
           <p>{{ poi.description }}</p>
-        </div>
-
-        <div class="row__column">
-          <div class="js-close-modal modal__close"></div>
-          <div class="bg-image--ratio-3-2" style="background-image: url('{{ site.baseurl }}/img/content/{{ page.class }}/poi-{{ poi.class }}.jpg');">
-            {% if poi.hidden-gem %}{% include decorations/hidden-gem.html class="hidden-gem" stroke="2" %}{% endif %}
-          </div>
         </div>
 
       </div>
@@ -247,17 +247,17 @@ layout: default
       {% for poi in page.pois %}
       <div class="slide modal__item modal__item-inactive row row--columns-6-6 row--columns-vertical-align" id="modal__item-{{ poi.class }}">
 
+        <div class="row__column">
+          <div class="js-close-modal modal__close"></div>
+          <div class="bg-image bg-image--ratio-16-9 bg-image--large--ratio-3-2" style="background-image: url('{{ site.baseurl }}/img/content/{{ page.class }}/poi-{{ poi.class }}.jpg');">
+            {% if poi.hidden-gem %}{% include decorations/hidden-gem.html class="hidden-gem" stroke="2" %}{% endif %}
+          </div>
+        </div>
+
         <div class="row__column modal__item__content">
           <h2 class="title title--small title--bold">{{ poi.title }}</h2>
           <p class="paragraph--small paragraph--upper paragraph--tracking">{{ poi.location }}</p>
           <p>{{ poi.description }}</p>
-        </div>
-
-        <div class="row__column">
-          <div class="js-close-modal modal__close"></div>
-          <div class="bg-image--ratio-3-2" style="background-image: url('{{ site.baseurl }}/img/content/{{ page.class }}/poi-{{ poi.class }}.jpg');">
-            {% if poi.hidden-gem %}{% include decorations/hidden-gem.html class="hidden-gem" stroke="2" %}{% endif %}
-          </div>
         </div>
 
       </div>

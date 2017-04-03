@@ -58,10 +58,9 @@ intro: >
 
 
 <!-- OFFERS - ONLY 2 -->
-<section class="section bg--light-grey decoration__trigger">
+<section class="section bg--light-grey">
   <div class="row row--padding">
     <h2 class="align-center title title--medium title--color title--expanded title--light title--upper">Offers</h2>
-    {% include decorations/hr.html class="animated-hr" color="rgba(0,0,0,0.4)" %}
   </div>
   <div class="row row--padding">
     {% assign offers = site.data.offers | sort: 'price' %}

@@ -127,10 +127,10 @@
       display: inline-block;
       vertical-align: middle;
       border-right: 1px solid $light-grey;
-      padding-right: ($margin/2);
+      padding-right: ($margin/3);
     }
     @include bp(medium){
-      padding-right: $margin;
+      padding-right: $margin/2;
     }
   }
   &__details {
@@ -139,10 +139,10 @@
       display: inline-block;
       vertical-align: middle;
       margin-top: 0;
-      padding-left: ($margin/2);
+      padding-left: ($margin/3);
     }
     @include bp(medium){
-      padding-left: $margin;
+      padding-left: $margin/2;
     }
   }
   &__price {

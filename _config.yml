@@ -1,7 +1,7 @@
 # Site settings
 title: Rediscover Italy
 description: >
-  Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+  A poetic landscape that has left scores of visitors spellbound, Italy is a magnificent concoction of renowned art, culture, food and drink, and breathtaking beauty.
 baseurl: "/italy" # the subpath of your site, e.g. /blog/
 url: "http://mp.secretescapes.com" # the base hostname & protocol for your site
 
@@ -9,4 +9,4 @@ url: "http://mp.secretescapes.com" # the base hostname & protocol for your site
 markdown: kramdown
 exclude: [node_modules, gulpfile.js, package.json, bower_components, bower.json, README.md]
 
-campaign-link: italia-link
+campaign-link: http://mp.secretescapes.com/italy/

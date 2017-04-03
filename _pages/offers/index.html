@@ -15,87 +15,19 @@ intro-short: >
 ---
 
 
-{% assign
-  city-pages = site.pages |
-  where: 'layout', 'destination' |
-  where: 'category', 'cities' |
-  sort: 'destination-order' %}
 
-{% assign
-  landscape-pages = site.pages |
-  where: 'layout', 'destination' |
-  where: 'category', 'landscapes' |
-  sort: 'destination-order' %}
+{% assign offers = site.data.offers | sort: 'saved' | reverse %}
 
-
-
-<section class="section bg--light-grey border--bottom {% unless page.intro %}section--padding-medium{% endunless %}">
+<section class="section bg--light-grey" id="offers">
   <div class="row row--padding align-center">
-
-    {% if page.intro %}
-      {{ page.intro }}
-      <hr />
-    {% endif %}
-
-    <ul class="list--offer-nav">
-      <li class="list__title"><h5 class="title title--sub title--upper">Jump to:</h5></li>
-
-      {% for offer-page in city-pages %}
-        {% assign offers = site.data.offers | where: offer-page.class, 'true' %}{% if offers.size != 0 %}
-        <li class="list__item" style="background-image: url({{ site.baseurl }}/img/bg/banner-{{ offer-page.class }}.jpg);">
-          <a href="#offers-{{ offer-page.class }}" class="list__link">{{ offer-page.title | upcase }}</a>
-        </li>
-        {% endif %}
-      {% endfor %}
-
-      {% for offer-page in landscape-pages %}
-        {% assign offers = site.data.offers | where: offer-page.class, 'true' %}{% if offers.size != 0 %}
-        <li class="list__item" style="background-image: url({{ site.baseurl }}/img/bg/banner-{{ offer-page.class }}.jpg);">
-          <a href="#offers-{{ offer-page.class }}" class="list__link">{{ offer-page.title | upcase }}</a>
-        </li>
-        {% endif %}
-      {% endfor %}
-
-    </ul>
-
+    <h2 class="title title--small title--upper title--expanded">{{ offer-page.title }}</h2>
+  </div>
+  <div class="row row--padding">
+    {% for offer in offers %}
+      {% include offer-small.html %}
+    {% endfor %}
   </div>
 </section>
-
-
-
-{% for offer-page in city-pages %}
-  {% assign offers = site.data.offers | where: offer-page.class, 'true' | sort: 'saved' | reverse %}
-  {% if offers.size != 0 %}
-  <section class="section {% cycle '', 'bg--light-grey' %}" id="offers-{{ offer-page.class }}">
-    <div class="row row--padding align-center">
-      <h2 class="title title--small title--upper title--expanded">{{ offer-page.title }}</h2>
-    </div>
-    <div class="row row--padding">
-      {% for offer in offers %}
-        {% include offer-small.html %}
-      {% endfor %}
-    </div>
-  </section>
-  {% endif %}
-{% endfor %}
-
-
-
-{% for offer-page in landscape-pages %}
-  {% assign offers = site.data.offers | where: offer-page.class, 'true' | sort: 'saved' | reverse %}
-  {% if offers.size != 0 %}
-  <section class="section {% cycle 'bg--light-grey', '' %}" id="offers-{{ offer-page.class }}">
-    <div class="row row--padding align-center">
-      <h2 class="title title--small title--upper title--expanded">{{ offer-page.title }}</h2>
-    </div>
-    <div class="row row--padding">
-      {% for offer in offers %}
-        {% include offer-small.html %}
-      {% endfor %}
-    </div>
-  </section>
-  {% endif %}
-{% endfor %}
 
 
 

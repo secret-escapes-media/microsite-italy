@@ -70,8 +70,10 @@
     }
   }
   &--large {
-    padding: 0.8em 4em;
-    font-size: 15px;
+    @include bp(large){
+      padding: 0.8em 4em;
+      font-size: 15px;
+    }
   }
   &--white { background-color: rgba($white, .8); color: $title-black;
     &:hover { background-color: rgba($white, 1);}

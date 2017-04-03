@@ -166,7 +166,7 @@ $nav-arrow-width: 66px;
       background-repeat: no-repeat;
       background-size: $nav-arrow-width auto;
     }
-    @include bp(medium){
+    @include bp(xlarge){
       // remove the prompt for sideways scroll
       padding-right: 0;
       overflow: visible;
@@ -199,7 +199,7 @@ $nav-arrow-width: 66px;
   &__item--cities &__link--current { color: $italy-charcoal; }
   &__item--landscapes &__link--current { color: $italy-green; }
 
-  @include bp(medium){
+  @include bp(xlarge){
     overflow: visible;
     height: auto;
     .flexbox & {
@@ -221,7 +221,7 @@ $nav-arrow-width: 66px;
 
 .category-nav {
   display: none;
-  @include bp(large){
+  @include bp(xlarge){
     position: absolute;
     top: ($site-nav-height)+1;
     left: 0;
