@@ -19,6 +19,22 @@
       float: none !important;
     }
   }
+
+  &--small {
+    @include bp(xxlarge){
+      @include layout(12 1);
+      @include gallery(4);
+      margin-bottom: gutter(12);
+      // centers single offer
+      &:nth-child(odd):last-child{
+        margin-right: auto;
+        margin-left: auto;
+        float: none !important;
+      }
+    }
+  }
+
+
   // END GRID SHIZZ
   &__link {
     position: absolute;

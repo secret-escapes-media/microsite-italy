@@ -14,15 +14,21 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: $z-content-upper;
+  }
+  &__overlay {
+    content: "";
+    position: absolute;
     z-index: $z-content;
-    background-color: $black-15;
+    top:0;bottom:0;left:0;right:0;
+    background-color: $italy-charcoal;
+    opacity: 0.25;
   }
   &__title {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: $z-content;
     padding-top: 25vh;
     padding-left: ($margin/2);
     padding-right: ($margin/2);
@@ -32,11 +38,29 @@
       transform: translateY(-50%);
     }
   }
+  &__cities {
+    .csstransforms.csstransforms3d & .title-banner__title { transform: translateY(-30%); }
+  }
+
+  &__badge {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    z-index: $z-content-upper;
+    width: 140px;
+    margin-left: -70px;
+    @include bp(large){
+      width: 180px;
+      margin-left: -90px;
+    }
+
+  }
 
   .page-title {
-    margin: 35px;
+    margin: 35px 0;
     padding: 0.25em 0 0.1em;
     position: relative;
+    display: block;
 
     &--before,&--after {
       width: 600px;
@@ -49,5 +73,6 @@
     &--before { top: -45px; }
     &--after {  bottom: -45px; }
 
+    &--sub { display: block; margin-top: 10px; margin-bottom: 20px; }
   }
 }

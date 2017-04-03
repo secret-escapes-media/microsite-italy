@@ -4,6 +4,7 @@
 
  $draw-length: 500;
  $long-draw-length: 800;
+ $extra-long-draw-length: 1000;
 
  // Keyframe animations for drawing in decorations
  // -- normal draw in
@@ -19,6 +20,13 @@
  }
  @keyframes long-draw-out {
    from { stroke-dashoffset: 0; } to { stroke-dashoffset: -$long-draw-length; }
+ }
+ // -- extra long draw in
+ @keyframes extra-long-draw-in {
+   from { stroke-dashoffset: -$extra-long-draw-length; } to { stroke-dashoffset: 0; }
+ }
+ @keyframes extra-long-draw-out {
+   from { stroke-dashoffset: 0; } to { stroke-dashoffset: -$extra-long-draw-length; }
  }
 
 
@@ -100,5 +108,82 @@
     top: -250px;
     right: 50%;
     margin-right: -250px;
+  }
+}
+
+
+
+.gems-badge {
+  position: relative;
+
+  &__text {
+    @include transition();
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+    display: block;
+    padding: 2em;
+    padding-top: 4em;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    font-size: 0.8em;
+    line-height: 1.3em;
+    @include bp(large){
+      font-size: 1.1em;
+    }
+    .animate & {
+      padding-top: 2em;
+      opacity: 1;
+    }
+  }
+  .path {
+    animation: extra-long-draw-out 3s ease-in-out forwards;
+    stroke-dashoffset: -$extra-long-draw-length !important;
+    stroke-dasharray: $extra-long-draw-length !important;
+  }
+  &.animate {
+    .path { animation: extra-long-draw-in 3s ease-in-out forwards; }
+  }
+}
+
+
+
+.hidden-gem {
+
+  &__text {
+    @include transition();
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+    display: block;
+    padding: 10%;
+    padding-top: 4em;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    font-size: 0.9em;
+    line-height: 1.3em;
+    @include bp(large){
+      font-size: 1.3em;
+    }
+    .animate & {
+      padding-top: 10%;
+      opacity: 1;
+    }
+  }
+  .path {
+    animation: extra-long-draw-out 3s ease-in-out forwards;
+    stroke-dashoffset: -$extra-long-draw-length !important;
+    stroke-dasharray: $extra-long-draw-length !important;
+  }
+  &.animate {
+    .path { animation: extra-long-draw-in 3s ease-in-out forwards; }
   }
 }

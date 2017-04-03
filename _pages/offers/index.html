@@ -9,28 +9,95 @@ banner-content:
 
 intro-short: >
   Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-intro: >
-  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla.</p>
-  <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+
 
 ---
 
 
-{% if page.intro  %}
-<section class="section">
-  <div class="row row--padding">
-    <div class="row align-center">
-      {{ page.intro }}
-    </div>
-  </div>
-</section>
-{% endif %}
+{% assign
+  city-pages = site.pages |
+  where: 'layout', 'destination' |
+  where: 'category', 'cities' |
+  sort: 'destination-order' %}
 
-<section class="section bg--light-grey">
-  <div class="row row--padding">
-    {% include offers.html type="half-width" %}
+{% assign
+  landscape-pages = site.pages |
+  where: 'layout', 'destination' |
+  where: 'category', 'landscapes' |
+  sort: 'destination-order' %}
+
+
+
+<section class="section bg--light-grey border--bottom {% unless page.intro %}section--padding-medium{% endunless %}">
+  <div class="row row--padding align-center">
+
+    {% if page.intro %}
+      {{ page.intro }}
+      <hr />
+    {% endif %}
+
+    <ul class="list--offer-nav">
+      <li class="list__title"><h5 class="title title--sub title--upper">Jump to:</h5></li>
+
+      {% for offer-page in city-pages %}
+        {% assign offers = site.data.offers | where: offer-page.class, 'true' %}{% if offers.size != 0 %}
+        <li class="list__item" style="background-image: url({{ site.baseurl }}/img/bg/banner-{{ offer-page.class }}.jpg);">
+          <a href="#offers-{{ offer-page.class }}" class="list__link">{{ offer-page.title | upcase }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
+
+      {% for offer-page in landscape-pages %}
+        {% assign offers = site.data.offers | where: offer-page.class, 'true' %}{% if offers.size != 0 %}
+        <li class="list__item" style="background-image: url({{ site.baseurl }}/img/bg/banner-{{ offer-page.class }}.jpg);">
+          <a href="#offers-{{ offer-page.class }}" class="list__link">{{ offer-page.title | upcase }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
+
+    </ul>
+
   </div>
 </section>
+
+
+
+{% for offer-page in city-pages %}
+  {% assign offers = site.data.offers | where: offer-page.class, 'true' | sort: 'saved' | reverse %}
+  {% if offers.size != 0 %}
+  <section class="section {% cycle '', 'bg--light-grey' %}" id="offers-{{ offer-page.class }}">
+    <div class="row row--padding align-center">
+      <h2 class="title title--small title--upper title--expanded">{{ offer-page.title }}</h2>
+    </div>
+    <div class="row row--padding">
+      {% for offer in offers %}
+        {% include offer-small.html %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+{% endfor %}
+
+
+
+{% for offer-page in landscape-pages %}
+  {% assign offers = site.data.offers | where: offer-page.class, 'true' | sort: 'saved' | reverse %}
+  {% if offers.size != 0 %}
+  <section class="section {% cycle 'bg--light-grey', '' %}" id="offers-{{ offer-page.class }}">
+    <div class="row row--padding align-center">
+      <h2 class="title title--small title--upper title--expanded">{{ offer-page.title }}</h2>
+    </div>
+    <div class="row row--padding">
+      {% for offer in offers %}
+        {% include offer-small.html %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+{% endfor %}
+
+
 
 <section class="section offer-promo">
   <div class="offer-promo__bgs">
@@ -40,7 +107,7 @@ intro: >
   </div>
   <div class="row row--padding offer-promo__content align-center invert-text">
     <h2 class="title title--medium title--light title--expanded title--upper">That’s not all we do...</h2>
-    <p class="p--lead">Didn’t see anything in Norway to take your fancy? Well, we have loads more offers with savings of up to 70%!</p>
+    <p class="p--lead">Didn’t see anything in Italy to take your fancy? Well, we have loads more offers with savings of up to 70%!</p>
     <a href="https://www.secretescapes.com/current-sales" class="btn btn--orange">See All Current Sales</a>
   </div>
 </section>

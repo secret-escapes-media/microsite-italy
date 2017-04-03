@@ -40,7 +40,7 @@ intro: >
     {% assign category-pages = site.pages | where: "layout", "category" %}
     {% for category-page in category-pages %}
 
-    <a href="{{ category-page.url }}" class="row__column bg-image bg-image--ratio-3-2 invert-text" style="background-image: url('{{ site.baseurl }}/img/bg/banner-{{ category-page.class }}.jpg');">
+    <a id="title_link-category-{{ category-page.class }}" href="{{ site.baseurl }}{{ category-page.url }}" class="row__column bg-image bg-image--ratio-3-2 invert-text" style="background-image: url('{{ site.baseurl }}/img/bg/banner-{{ category-page.class }}.jpg');">
       <div class="bg-image__content">
 
         <div class="category-link">
@@ -70,6 +70,6 @@ intro: >
     {% endfor %}
   </div>
   <div class="align-center">
-    <a href="{{site.baseurl}}/offers" class="btn btn--orange">See All Offers</a>
+    <a href="{{ site.baseurl }}/offers" class="btn btn--orange">See All Offers</a>
   </div>
 </section>

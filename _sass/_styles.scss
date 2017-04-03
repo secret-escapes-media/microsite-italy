@@ -7,19 +7,27 @@
   p, .title { color: $white; }
 }
 
+.border {
+  border: 1px solid rgba(0,0,0,0.1);
+  &--top { border-top: 1px solid rgba(0,0,0,0.1); }
+  &--bottom { border-bottom: 1px solid rgba(0,0,0,0.1); }
+}
+
 .bg {
-  &--light-grey       { background-color: $light-grey; }
+  &--dark-grey        { background-color: $dark-grey; }
+  &--light-grey       { background-color: $lightest-grey; }
   &--italy-red        { background-color: $italy-red; }
-  &--italy-brown      { background-color: $italy-brown; }
   &--italy-green      { background-color: $italy-green; }
   &--italy-blue       { background-color: $italy-blue; }
   &--italy-light-blue { background-color: $italy-light-blue; }
   &--italy-light-grey { background-color: $italy-light-grey; }
   &--italy-grey       { background-color: $italy-grey; }
   &--italy-dark-grey  { background-color: $italy-dark-grey; }
-  &--italy-black       { background-color: $light-grey; }
+  &--italy-charcoal   { background-color: $italy-charcoal; }
   &--cities           { background-color: $italy-charcoal; }
   &--landscapes       { background-color: $italy-green; }
+
+  &--image { @include background-attributes(); }
 }
 
 
@@ -91,6 +99,7 @@
   }
   &--invert {
     color: $white;
+    background-color: $black-25;
     border: 1px solid $white;
     &:hover {
       background-color: $white;
@@ -116,7 +125,9 @@
 #highlights {
   overflow: hidden;
 }
-#nearby {}
+#nearby {
+  overflow: hidden;
+}
 #offers {
   overflow: hidden;
 }
@@ -139,26 +150,47 @@
   }
 }
 
+#modal-poi {
+  .hidden-gem {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: $z-content-upper;
+    width: 90px;
+    @include bp(large){
+      width: 120px;
+    }
+    &__text {
+      color: #ffffff;
+    }
+  }
+}
+
 
 // ----- Nearby -----
 
+#nearby { background-size: 100%; }
+
 .nearby {
   background-color: #ffffff;
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.1);
   margin-bottom: 2em;
+  border-radius: 5px;
+  overflow: hidden;
   &__location {
     margin-top: 1em;
     margin-left: 1.5em;
     margin-bottom: 1em;
     text-indent: -1.5em;
     line-height: 1.5;
+    font-size: 0.9em;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 400;
     &:before {
       content: "";
       display: inline-block;
-      height: 1.5em;
+      height: 1.3em;
       width: 1.05em;
       margin-right: .5em;
       margin-bottom: .2em;
@@ -175,7 +207,9 @@
 
 .nearby-page {
   padding: 3em 2em;
-  @include background-attributes(); 
+  border-radius: 5px;
+  overflow: hidden;
+  @include background-attributes();
 }
 
 

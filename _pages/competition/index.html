@@ -1,0 +1,61 @@
+---
+layout: standard
+nav-order: 6
+title: Competition
+class: competition
+
+banner-title: Win a Tuscan getaway in a historic villa
+banner-content:
+
+intro-short: >
+  In the hills of Chianti, Villa San Filippo nestles amongst characteristic vineyards and olive groves found all over this famous wine region. For an enchanted break in the heart of Tuscany, enter here.
+intro: >
+  <p class="p--lead">In the hills of Chianti, Villa San Filippo nestles amongst characteristic vineyards and olive groves found all over this famous wine region. You could win a three-night stay with flights included, perfect for winding down under the Tuscan sun. For an enchanted break in the heart of Tuscany, enter here.</p>
+
+---
+
+
+
+{% if page.intro %}
+<section class="section bg--dark-grey invert-text">
+  <div class="row row--padding align-center">
+    {{ page.intro }}
+    <a href="#competition" class="btn btn--invert">Enter now</a>
+  </div>
+</section>
+{% endif %}
+
+
+<section class="section bg--light-grey">
+  <div class="row row--padding">
+    <div class="bob">
+      <div class="bob__image">
+        <a href="#competition"><div class="bg-image bg-image--ratio bg-image--ratio-3-2" style="background-image: url('{{site.baseurl}}/img/content/competition/hotel.jpg');"></div></a>
+      </div>
+      <div class="bob__text">
+        <h2 class="title title--sub title--upper title--smaller">The Villa</h2>
+        <p>For three nights, you’ll stay at the Villa San Filippo, a 16th century mansion resplendent in the gorgeous hillside of the Chianti region. Aside from glorious vistas and delicious local wines, you can expect to be treated to classic Italian luxury, with a stay in the villa’s Superior room. Rustic wooden beams and Tuscan tiles set the tone of your stay, where elegant design compliments the views over the vineyards. With three swimming pools to choose from, each offering panorama over the countryside, you’ll be sure to find your very own slice of Tuscan delights. Take a stroll through the charming gardens and soak up the warm Tuscan sun.</p>
+      </div>
+    </div>
+    <div class="bob">
+      <div class="bob__image">
+        <a href="#competition"><div class="bg-image bg-image--ratio bg-image--ratio-3-2" style="background-image: url('{{site.baseurl}}/img/content/competition/surrounds.jpg');"></div></a>
+      </div>
+      <div class="bob__text">
+        <h2 class="title title--sub title--upper title--smaller">The surrounding area</h2>
+        <p>Explore the historic Barberino Val d’Elsa, a medieval village sat on the ancient Roman road that connects Florence to Rome. With great hiking opportunities in the surrounding hills, plus enotecas and trattorias to kick-back in, Tuscan charms abound straight from your doorstep. With Florence under an hour away, there’s plenty to see and do. Check out our Tuscany guide below, for even more tips on exploring the region.</p>
+        <a href="{{ site.baseurl }}/landscapes/tuscany" class="btn btn--green">Explore Tuscany</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="competition" class="section">
+  <div class="row row--padding">
+    <div class="row align-center">
+      <h2 class="title title--smaller title--upper title--expanded">Enter below for the chance to let Italy captivate you</h2>
+      <iframe src="https://promotion3083.strutta.me" width="100%" height="500"></iframe>
+    </div>
+  </div>
+</section>
+

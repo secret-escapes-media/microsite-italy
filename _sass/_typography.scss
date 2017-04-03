@@ -4,17 +4,17 @@
 // -------- root typography styles --------
 
 $core-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-$main-font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
-$title-font-family: 'Prata', 'Helvetica Neue', sans-serif;
+$main-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+$title-font-family: 'Prata', Didot,"Didot LT STD","Bodoni MT","Hoefler Text",Garamond,"Times New Roman",serif;
 $subtitle-font-family: 'Oswald', 'Arial Narrow', sans-serif;
 
 html { font-size:62.5%; }
 body,
 input, textarea, keygen, select, button {
-  font: 400 15px/1.628 $main-font-family;
+  font: 400 14px/1.628 $main-font-family;
   -webkit-text-size-adjust: 100%;
   @include bp(medium) {
-    font-size: 16px;
+    font-size: 15px;
   }
   color: $paragraph-black;
 }
@@ -95,10 +95,7 @@ p {
 p.align-center { margin-left: auto; margin-right: auto; }
 
 .p {
-  &--lead {
-    font-size: 1.25em;
-    line-height: 1.55;
-  }
+  &--lead {}
   &--large { font-size: 1.05em; }
   &--small { font-size: .85em; }
 
@@ -111,6 +108,12 @@ p.align-center { margin-left: auto; margin-right: auto; }
   &--tighter   { line-height: .8; }
   &--upper     { text-transform: uppercase; }
   &--italic    { font-style: italic; }
+  @include bp(large){
+    &--lead {
+      font-size: 1.25em;
+      line-height: 1.55;
+    }
+  }
 }
 
 // -------- Lists ---------
@@ -124,30 +127,73 @@ dl {
   &--horizontal {
     list-style: none; padding: 0; margin: 0;
     li {
-      display: inline-block; position: relative; padding: 0 1em;
+      display: inline-block; position: relative; padding: 0.5em 1.5em; margin: 0.5em 0;
     }
-    li + li:after {
+    li:after {
       content: '';
       position: absolute;
       top: 50%;
-      left: 0;
+      right: 0;
       display: block;
       height: 100%;
       width: 1px;
-      background-color: rgba($white,0.1);
+      background-color: rgba($black,0.2);
       transform: translateY(-50%);
+    }
+    li:last-child:after { content: none; }
+    .list__title {
+      padding-right: 0;
+      &:after { content: none; }
     }
   }
   &--lined {
     li {
       list-style: none;
-      padding: 4px 0;
-    }
-    li + li {
+      padding: 10px 0;
       border-top: 1px solid $black-25;
       .invert-text & { border-top: 1px solid rgba($white,0.1); }
     }
   }
+
+
+    &--offer-nav {
+      list-style: none; padding: 0; margin: 0;
+      li {
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .list__title {
+        margin: 0.5em 1em;
+      }
+      .list__item {
+        @include background-attributes();
+        overflow: hidden;
+        color: #fff;
+        font-size: 0.9em;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        border-radius: 9999em;
+        margin: 0 0.2em;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      .list__link {
+        @include transition();
+        padding: 0.5em 1.5em;
+        position: relative;
+        display: block;
+        background-color: rgba($black,0.2);
+        &:hover {
+          text-decoration: none;
+          background-color: rgba($black,0.5);
+        }
+      }
+    }
+
+
 }
 
 // -------- general content styles --------
@@ -166,5 +212,10 @@ hr {
   height: 1px;
   background-color: $light-grey;
   margin: 1em 0;
+}
+
+a {
+  &:hover { text-decoration: none; }
+  p &:hover { text-decoration: underline; }
 }
 

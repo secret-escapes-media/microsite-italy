@@ -18,21 +18,21 @@ layout: default
 {% endif %}
 
 
-{% assign category-pages = site.pages | where: "category", page.class | sort:'destination-order' %}
-{% for category-page in category-pages %}
-  <section class="harvey section clearfix section--padding-none{% cycle '', ' bg--italy-light-grey' %}">
+{% assign destination-pages = site.pages | where: "category", page.class | sort:'destination-order' %}
+{% for destination-page in destination-pages %}
+  <section class="harvey section clearfix section--padding-none">
+
+    <a id="image_link-destination-{{ destination-page.class }}" href="{{ site.baseurl }}{{ destination-page.url }}" class="harvey__image bg-image bg-image--ratio bg-image--ratio-3-2" style="background-image: url({{site.baseurl}}/img/bg/banner-{{ destination-page.class }}.jpg);"></a>
 
     <div class="harvey__text align-center">
       <h2 class="align-center title title--medium title--expanded title--light title--upper">
-        <a class="a--plain" href="{{ category-page.url }}">
-          {{ category-page.title }}
+        <a id="title_link-destination-{{ destination-page.class }}" class="a--plain" href="{{ site.baseurl }}{{ destination-page.url }}">
+          {{ destination-page.title }}
         </a>
       </h2>
-      <p class="p--lead">{{ category-page.intro-short | truncate: 200 }}</p>
-      <a href="{{ category-page.url }}" class="btn btn--green btn--large">See {{ category-page.title }}</a>
+      <p class="p--lead">{{ destination-page.intro-short | truncate: 200 }}</p>
+      <a id="button_link-destination-{{ destination-page.class }}" href="{{ site.baseurl }}{{ destination-page.url }}" class="btn btn--green btn--large">See {{ destination-page.title }}</a>
     </div>
-
-    <a href="{{ category-page.url }}" class="harvey__image bg-image bg-image--ratio bg-image--ratio-3-2" style="background-image: url({{site.baseurl}}/img/bg/banner-{{ category-page.class }}.jpg);"></a>
 
   </section>
 {% endfor %}

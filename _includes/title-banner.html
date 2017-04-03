@@ -1,30 +1,44 @@
-<section class="title-banner invert-text" style="background-image: url({{ site.baseurl }}/img/bg/banner-{{ page.title | slugify }}.jpg);">
+<section class="title-banner invert-text{% if page.category == 'cities' %} title-banner__cities{% endif %}" style="background-image: url({{ site.baseurl }}/img/bg/banner-{{ page.title | slugify }}.jpg);">
   <div class="title-banner__wrap">
-    <div class="title-banner__title row">
+    <div class="title-banner__title row{% if page.class == 'competition' %}--thin{% endif %}">
 
-      {% if page.class != 'overview' %}
-        <span class="title title--sub title--smallest title--expanded title--upper">Italy{% if page.layout == 'destination' %} / {{ page.category }}{% endif %}</span>
+      {% if page.category == 'cities' %}
+      <div class="title-banner__badge">
+        {% include decorations/gems-guide.html class="gems-badge" stroke="2" %}
+      </div>
       {% endif %}
 
-      <h1 class="page-title title {% if page.class == 'overview' %}title--largest{% else %}title--larger{% endif %} title--expanded title--upper title--light">
+      <h1 class="page-title">
 
         {% include decorations/title-before.html class="page-title--before" stroke="0.5" %}
 
-        {% if page.banner-title %}
-          {{ page.banner-title }}
+        {% if page.class == 'overview' %}
+
+          <span class="page-title--sub title title--small title--sub">Rediscover</span>
+          <span class=" title title--expanded title--upper title--light title--largest">
+            {{ page.banner-title }}
+          </span>
+
         {% else %}
-          {{ page.title }}
+          <span class="{% if page.class == 'competition' %}title--large{% else %}title--larger{% endif %} title title--expanded title--upper title--light">
+          {% if page.banner-title %}
+            {{ page.banner-title }}
+          {% else %}
+            {{ page.title }}
+          {% endif %}
+          </span>
         {% endif %}
 
         {% include decorations/title-after.html class="page-title--after" stroke="0.5" %}
 
       </h1>
 
-      {% if page.banner-content %}
-        {{ page.banner-content }}
+      {% if page.class != 'overview' %}
+        <span class="title title--sub title--smallest title--expanded title--upper"><a href="{{ site.baseurl }}">Italy</a>{% if page.layout == 'destination' %} / <a href="{{ site.baseurl }}/{{ page.category }}">{{ page.category }}</a>{% endif %}</span>
       {% endif %}
 
     </div>
   </div>
+  <div class="title-banner__overlay"></div>
 </section>
 

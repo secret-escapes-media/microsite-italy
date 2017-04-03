@@ -27,16 +27,34 @@ $margin: 1.6em;
 .row {
   @include container( $xxxlarge );
   position: relative;
-  & + .row { margin-top: 2.986em; }
+  & + & { margin-top: 2.986em; }
   &--center {
     margin-left: auto;
     margin-right: auto;
   }
+
+  &--thin {
+    @include container( $xxlarge );
+    position: relative;
+    & + &,
+    .row + &,
+    & + .row { margin-top: 2.986em; }
+  }
 }
+
 
 .row--padding {
   padding-left: $margin;
   padding-right: $margin;
+  &-vertical {
+    padding-top: $margin;
+    padding-bottom: $margin;
+  }
+
+  &-extra {
+    padding-left: $margin*1.5;
+    padding-right: $margin*1.5;
+  }
 }
 .row--margin {
   margin-left: ( $margin / 2 );

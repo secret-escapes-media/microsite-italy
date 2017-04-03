@@ -1,4 +1,4 @@
-<div class="offer">
+<div class="offer offer--small">
 
   <a id="card-link-{{ offer.title | slugify }}" class="offer__link" href="{{ offer.link }}"><span class="btn btn--orange">View Offer</span></a>
 
@@ -12,6 +12,7 @@
 
     <div class="offer__bottom">
       <div class="offer__bottom-item">
+
         <div class="offer__saved">
           <span class="p--small">Save up to</span> <span class="offer__saved-num">{{ offer.saved }}%</span>
         </div>
@@ -21,7 +22,7 @@
           <div class="js-offer-expires p--small" data-expires="{{ offer.expires }}"></div>
         </div>
       </div>
-      <div class="offer__bottom-item offer__bottom-item--right"><div class="offer__arrow"></div></div>
+
     </div>
 
   </div>

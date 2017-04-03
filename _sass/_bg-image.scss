@@ -122,7 +122,7 @@
     .bg-image__content {
       background-color: rgba($italy-charcoal, 0.8);
       &__title { letter-spacing: 0.09em; }
-      &__title-fade { letter-spacing: 0.09em; opacity: 0.1; }
+      &__title-fade { letter-spacing: 0.09em; opacity: 0; }
       &__description { opacity: 1; }
     }
   }

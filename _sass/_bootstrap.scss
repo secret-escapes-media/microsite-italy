@@ -90,11 +90,13 @@ $gutter-large: 30px;
     @include clearfix();
   }
   // center children in the last row
-  &:last-child {
-    text-align: center;
-    .col {
-      display: inline-block;
-      float: none;
+  @include min-bp(xxlarge) {
+    &:last-child {
+      text-align: center;
+      .col {
+        display: inline-block;
+        float: none;
+      }
     }
   }
 }
