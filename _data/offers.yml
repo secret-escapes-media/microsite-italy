@@ -15,7 +15,7 @@
   price: 58
   price-description: per room per night
   saved: 48
-  link: https://www.secretescapes.com/radisson-blu-es-hotel-rome-italy/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/radisson-blu-es-hotel-rome-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Smooth Hotel Rome Termini
   class: smooth-hotel-rome-termini
@@ -29,7 +29,7 @@
   price: 98
   price-description: per room per night
   saved: 34
-  link: https://www.secretescapes.com/smooth-hotel-rome-termini-rome-italy/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/smooth-hotel-rome-termini-rome-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Hotel dei Consoli
   class: hotel-dei-consoli
@@ -43,7 +43,7 @@
   price: 165
   price-description: per room per night
   saved: 34
-  link: https://www.secretescapes.com/romantic-break-at-an-elegant-rome-hotel-hotel-dei-consoli-italy1/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/romantic-break-at-an-elegant-rome-hotel-hotel-dei-consoli-italy1/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Hotel Concordia
   class: hotel-concordia
@@ -57,7 +57,7 @@
   price: 81
   price-description: per room per night
   saved: 31
-  link: https://www.secretescapes.com/hotel-concordia-venice-italy/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/hotel-concordia-venice-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Villa Nardi
   class: villa-nardi
@@ -71,7 +71,7 @@
   price: 79
   price-description: per room per night
   saved: 66
-  link: https://www.secretescapes.com/villa-nardi-florence-italy/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/villa-nardi-florence-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 
 
@@ -91,7 +91,7 @@
   price: 299
   price-description: per person for 3 nights
   saved: 31
-  link: https://www.secretescapes.com/romantic-tuscany-castle-break-castello-di-leonina-relais-italy-2/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/romantic-tuscany-castle-break-castello-di-leonina-relais-italy-2/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Palazzo Guiscardo
   class: palazzo-guiscardo
@@ -105,7 +105,7 @@
   price: 40
   price-description: per room per night
   saved: 47
-  link: https://www.secretescapes.com/palazzo-guiscardo-pietrasanta-italy/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/palazzo-guiscardo-pietrasanta-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Hotel Poseidon
   class: hotel-poseidon
@@ -119,7 +119,7 @@
   price: 275
   price-description: per person for 5 nights
   saved: 38
-  link: https://www.secretescapes.com/scenic-italy-break-to-foothills-of-mount-vesuvius-hotel-poseidon-bay-of-naples/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/scenic-italy-break-to-foothills-of-mount-vesuvius-hotel-poseidon-bay-of-naples/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Hotel Parco delle Agavi
   class: hotel-parco-delle-agavi
@@ -133,7 +133,21 @@
   price: 469
   price-description: per person for 7 nights
   saved: 34
-  link: https://www.secretescapes.com/peaceful-ischia-beach-holiday-hotel-parco-delle-agavi-ischia/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/peaceful-ischia-beach-holiday-hotel-parco-delle-agavi-ischia/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+
+- title: Hotel Villa Carlotta
+  class: hotel-villa-carlotta
+  category: landscapes
+  amalfi-coast:
+  sicily:
+  lombardy: true
+  tuscany:
+  location: Lake Maggiore, Italy
+  description: Classic Italian elegance at a water-side hotel that overlooks the vast Lake Maggiore
+  price: 62
+  price-description: per room per night
+  saved: 55
+  link: https://www.secretescapes.com/hotel-villa-carlotta-belgirate-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 
 
@@ -148,7 +162,7 @@
   price: 96
   price-description: per room per night
   saved: 44
-  link: https://www.secretescapes.com/sextantio-albergo-diffuso-abruzzo-italy/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/sextantio-albergo-diffuso-abruzzo-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Palazzo Righini
   class: palazzo-righini
@@ -157,7 +171,7 @@
   price: 97
   price-description: per room per night
   saved: 49
-  link: https://www.secretescapes.com/palazzo-righini-piedmont-italy/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/palazzo-righini-piedmont-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Villaggio Club Baia del Sole
   class: villaggio-club-baia-del-sole
@@ -166,7 +180,7 @@
   price: 62
   price-description: per room per night
   saved: 48
-  link: https://www.secretescapes.com/villaggio-club-baia-del-sole-calabria-italy/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/villaggio-club-baia-del-sole-calabria-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Hotel Casa Celestino
   class: hotel-casa-celestino
@@ -175,7 +189,7 @@
   price: 43
   price-description: per room per night
   saved: 47
-  link: https://www.secretescapes.com/hotel-casa-celestino-ischia-italy/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/hotel-casa-celestino-ischia-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
 
 - title: Colonna Pervero Hotel
   class: colonna-pervero-hotel
@@ -184,4 +198,22 @@
   price: 206
   price-description: per room per night
   saved: 54
-  link: https://www.secretescapes.com/colonna-pevero-hotel-costa-smeralda-sardinia/sale?gce_scp=0&utm_source=Italia2017
+  link: https://www.secretescapes.com/colonna-pevero-hotel-costa-smeralda-sardinia/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+
+- title: Enterprise Hotel
+  class: enterprise-hotel
+  location: Milan, Italy
+  description: Seventh heaven at a luxe spa hotel in Milan, with stylish interiors and amazing city view
+  price: 64
+  price-description: per room per night
+  saved: 47
+  link: https://www.secretescapes.com/enterprise-hotel-milan-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+
+- title: Griffin's Resort
+  class: griffin-s-resort
+  location: Orvieto, Italy
+  description: A stay in rural Umbria, with breakfast, delicious wine and optional dinner included
+  price: 43
+  price-description: per room per night
+  saved: 37
+  link: https://www.secretescapes.com/griffins-resort-orvieto-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
