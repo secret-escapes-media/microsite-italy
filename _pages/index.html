@@ -63,7 +63,7 @@ intro: >
     <h2 class="align-center title title--medium title--color title--expanded title--light title--upper">Offers</h2>
   </div>
   <div class="row row--padding">
-    {% assign offers = site.data.offers | sort: 'price' %}
+    {% assign offers = site.data.offers | sort: 'saved' | reverse %}
     {% for offer in offers limit: 2 %}
       {% include offer.html %}
     {% endfor %}

@@ -13,7 +13,7 @@ banner-content:
 
 
 
-{% assign offers = site.data.offers | sort: 'saved' %}
+{% assign offers = site.data.offers | sort: 'saved' | reverse %}
 
 <section class="section bg--light-grey" id="offers">
   <div class="row row--padding">
