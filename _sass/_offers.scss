@@ -1,6 +1,7 @@
 // Offer block styles
 
 
+
 .offer {
   position: relative;
   // GRID SHIZZ
@@ -12,8 +13,8 @@
     @include layout(12 1);
     @include gallery(6);
     margin-bottom: gutter(12);
-    // centers single offer
-    &:nth-child(odd):last-child{
+    // centers the last offer in 2 col grid
+    .offers--center &:nth-child(odd):last-child {
       margin-right: auto;
       margin-left: auto;
       float: none !important;
@@ -25,12 +26,8 @@
       @include layout(12 1);
       @include gallery(4);
       margin-bottom: gutter(12);
-      // centers single offer
-      &:nth-child(odd):last-child{
-      }
     }
   }
-
 
   // END GRID SHIZZ
   &__link {

@@ -180,7 +180,7 @@ layout: default
 <!-- OFFERS - FOR DESTINATION -->
 {% assign offers = site.data.offers | where: page.class, true | sort: 'price' %}
 {% if offers.size != 0 %}
-  <section class="section bg--light-grey border--top decoration__trigger" id="offers">
+  <section class="section bg--light-grey border--top decoration__trigger offers offers--center" id="offers">
     <div class="row row--padding align-center">
       <h2 class="title title--medium title--color title--light title--expanded title--upper">{{ page.title }} Offers</h2>
       <p class="p--lead">Discover luxurious places to stay in {{ page.title }} and the surrounding area</p>
