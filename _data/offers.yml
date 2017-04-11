@@ -1,233 +1,175 @@
+# - title: #
+#   class: #
+#   category: cities / landscapes
+#   venice: true
+#   milan: true
+#   rome: true
+#   florence: true
+#   amalfi-coast: true
+#   sicily: true
+#   lombardy: true
+#   tuscany: true
+#   location: #
+#   description: #
+#   price: #
+#   price-description: per person per night
+#   saved: #
+#   link: #
+
 
 ##############################################
 ## CITY OFFERS
 ##############################################
 
-- title: Radisson Blu es. Hotel
-  class: radisson-blu-es-hotel
-  category: cities
-  venice:
-  milan:
-  rome: true
-  florence:
-  location: Rome, Italy
-  description: A hilltop beacon of minimalist architecture with city views, near some of Rome's most ancient sites
-  price: 58
-  price-description: per room per night
-  saved: 48
-  link: https://www.secretescapes.com/radisson-blu-es-hotel-rome-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
-
-- title: Smooth Hotel Rome Termini
-  class: smooth-hotel-rome-termini
-  category: cities
-  venice:
-  milan:
-  rome: true
-  florence:
-  location: Rome, Italy
-  description: Contemporary and beautifully minialist gigs set within a central 19th-century building
-  price: 98
-  price-description: per room per night
-  saved: 34
-  link: https://www.secretescapes.com/smooth-hotel-rome-termini-rome-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
-
-- title: Hotel dei Consoli
-  class: hotel-dei-consoli
-  category: cities
-  venice:
-  milan:
-  rome: true
-  florence:
-  location: Rome, Italy
-  description: Stay near the Vatican, with views of Saint Peter's Basilica from your hotel's leafy terrace
-  price: 165
-  price-description: per room per night
-  saved: 34
-  link: https://www.secretescapes.com/romantic-break-at-an-elegant-rome-hotel-hotel-dei-consoli-italy1/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
-
-- title: Hotel Concordia
-  class: hotel-concordia
-  category: cities
-  venice:
-  milan:
-  rome: true
-  florence:
-  location: Venice, Italy
-  description: Classic romance with a stay in the city's heart, with unparalleled views over St Mark's Square
-  price: 81
-  price-description: per room per night
-  saved: 31
-  link: https://www.secretescapes.com/hotel-concordia-venice-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
-
-- title: Villa Nardi
-  class: villa-nardi
-  category: cities
-  venice:
-  milan:
-  rome: true
-  florence:
-  location: Florence, Italy
-  description: Boutique stay at a 19th-century Florentine villa in tranquil gardens, near Pitti Palace
-  price: 79
-  price-description: per room per night
-  saved: 66
-  link: https://www.secretescapes.com/villa-nardi-florence-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+  # milan
+  # rome
+  # venice
+  # florence
 
 - title: Enterprise Hotel
   class: enterprise-hotel
   category: cities
-  venice:
   milan: true
-  rome:
-  florence:
   location: Milan, Italy
   description: Seventh heaven at a luxe spa hotel in Milan, with stylish interiors and amazing city views
   price: 64
   price-description: per room per night
   saved: 47
-  link: https://www.secretescapes.com/enterprise-hotel-milan-italy/sale?utm_source=SE&utm_medium=Email_050417&utm_campaign=Italia2017
+  link: https://www.secretescapes.com/enterprise-hotel-milan-italy/sale?utm_source=SE&utm_medium=Hub_100417&utm_campaign=Italia2017
 
+- title: Hotel Calzaiuoli
+  class: hotel-calzaiuoli
+  category: cities
+  florence: true
+  location: Florence, Italy
+  description: A tasteful stay at a central Florence hotel, just a stone's throw from the city's iconic Duomo
+  price: 46
+  price-description: per person per night
+  saved: 32
+  link: https://www.secretescapes.com/hotel-calzaiuoli-florence-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_100417&utm_campaign=Italia2017
+
+- title: Grand Jotel Ritz
+  class: grand-jotel-ritz
+  category: cities
+  rome: true
+  location: Rome, Italy
+  description: A five-star hotel in the Parioli district of Rome, with a daily shuttle service to the Spanish Steps
+  price: 56
+  price-description: per person per night
+  saved: 43
+  link: https://www.secretescapes.com/grand-hotel-ritz-rome-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
+
+- title: Opulent 5* Venice break
+  class: opulent-5-venice-break
+  category: cities
+  venice: true
+  location: Venice, Italy
+  description: A plush five-star hotel, with a private beach and shuttle to St Mark's Square, including flights
+  price: 369
+  price-description: per person for 3 nights
+  saved: 34
+  link: https://www.secretescapes.com/opulent-5-star-venice-break-hotel-excelsior-italy/sale?utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
 
 
 ##############################################
 ## LANDSCAPE OFFERS
 ##############################################
 
-- title: Hotel Castello di Leonina Relais
-  class: hotel-castello-di-leonina-relais
-  category: landscapes
-  amalfi-coast:
-  sicily:
-  lombardy:
-  tuscany: true
-  location: Asciano, Italy
-  description: A romantic 13th-century castle break, with breakfast, flights, car hire and added extras
-  price: 299
-  price-description: per person for 3 nights
-  saved: 31
-  link: https://www.secretescapes.com/romantic-tuscany-castle-break-castello-di-leonina-relais-italy-2/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+  # tuscany
+  # lombardy
+  # amalfi-coast
+  # sicily
 
-- title: Palazzo Guiscardo
-  class: palazzo-guiscardo
+- title: Grand Hotel Principe di Piemonte
+  class: grand-hotel-principe-di-piemonte
   category: landscapes
-  amalfi-coast:
-  sicily:
-  lombardy:
   tuscany: true
-  location: Pietrasanta, Italy
-  description: An Art Nouveau palace on Tuscany's coast, with access to the Forte dei Marmi beach facilities
-  price: 40
-  price-description: per room per night
-  saved: 47
-  link: https://www.secretescapes.com/palazzo-guiscardo-pietrasanta-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+  location: Tuscany, Italy
+  description: Classic and historic hotel with sea views and Michelin-starred dining - prosecco and more included
+  price: 48
+  price-description: per person per night
+  saved: 56
+  link: https://www.secretescapes.com/grand-hotel-principe-di-piemonte-tuscany-italy4/sale?utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
 
-- title: Hotel Poseidon
-  class: hotel-poseidon
+- title: Semiramis Hotel de Charme
+  class: semiramis-hotel-de-charme
   category: landscapes
   amalfi-coast: true
-  sicily:
-  lombardy:
-  tuscany:
-  location: Bay of Naples, Italy
-  description: A colourful and contemporary Bay of Naples stay on the coast, at the foothill of Mount Vesuvius
-  price: 275
-  price-description: per person for 5 nights
-  saved: 38
-  link: https://www.secretescapes.com/scenic-italy-break-to-foothills-of-mount-vesuvius-hotel-poseidon-bay-of-naples/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
-
-- title: Hotel Parco delle Agavi
-  class: hotel-parco-delle-agavi
-  category: landscapes
-  amalfi-coast: true
-  sicily:
-  lombardy:
-  tuscany:
   location: Ischia, Italy
-  description: Ultimate bliss at a serene beachside hotel in Ischia, with beautiful views and an idyllic setting
-  price: 469
-  price-description: per person for 7 nights
-  saved: 34
-  link: https://www.secretescapes.com/peaceful-ischia-beach-holiday-hotel-parco-delle-agavi-ischia/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+  description: A peaceful bayside Ischia stay by the beach, with a large outdoor thermal pool and lush gardens
+  price: 48
+  price-description: per person per night
+  saved: 31
+  link: https://www.secretescapes.com/semiramis-hotel-de-charme-ischia-italy/sale?utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
 
-- title: Hotel Villa Carlotta
-  class: hotel-villa-carlotta
+- title: Chervo Golf Hotel Spa & Resort
+  class: chervo-golf-hotel-spa-resort
   category: landscapes
-  amalfi-coast:
-  sicily:
   lombardy: true
-  tuscany:
-  location: Lake Maggiore, Italy
-  description: Classic Italian elegance at a water-side hotel that overlooks the vast Lake Maggiore
-  price: 62
-  price-description: per room per night
-  saved: 55
-  link: https://www.secretescapes.com/hotel-villa-carlotta-belgirate-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+  location: Lombardia, Italy
+  description: Championship golfing at a blissful spa hotel in the Italian hills near beautiful Lake Garda
+  price: 51
+  price-description: per person per night
+  saved: 58
+  link: https://www.secretescapes.com/chervo-golf-hotel-spa-and-resort-san-vigilio-lombardia-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
 
+- title: Scenic Sicily holiday at a rustic farmhouse retreat
+  class: scenic-sicily-holiday-at-a-rustic-farmhouse-retreat
+  category: landscapes
+  sicily: true
+  location: Case Passamonte, Italy
+  description: Escape to the picturesque Sicilian town of Chiaramonte Gulfi, with breakfast and car hire
+  price: 459
+  price-description: per person for 7 nights
+  saved: 28
+  link: https://www.secretescapes.com/scenic-sicily-holiday-case-passamonte-italy/sale?utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
 
 
 ##############################################
 ## ALL OTHER ITALY OFFERS
 ##############################################
 
-- title: Sextantio Albergo Diffuso
-  class: sextantio-albergo-diffuso
-  location: Abruzzo, Italy
-  description: A charming hotel with revived medieval touches, in the highest point of the Apennines
-  price: 96
-  price-description: per room per night
-  saved: 44
-  link: https://www.secretescapes.com/sextantio-albergo-diffuso-abruzzo-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
-
-- title: Palazzo Righini
-  class: palazzo-righini
-  location: Piedmont, Italy
-  description: A decadent stay at a stylish palazzo in Piedmont, with fine dining, a spa and wine vault
-  price: 97
-  price-description: per room per night
-  saved: 49
-  link: https://www.secretescapes.com/palazzo-righini-piedmont-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
-
-- title: Villaggio Club Baia del Sole
-  class: villaggio-club-baia-del-sole
-  location: Calabria, Italy
-  description: An enchanting beachfront resort nestled in the "toe" of Italy's boot, with beautiful views
-  price: 62
+- title: Infinity Resort Tropea
+  class: infinity-resort-tropea
+  location: Calabria, Southern Italy
+  description: A whitewashed beachfront resort in stunning southern Italy, with breakfast, spa discount and more
+  price: 88
   price-description: per room per night
   saved: 48
-  link: https://www.secretescapes.com/villaggio-club-baia-del-sole-calabria-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+  link: https://www.secretescapes.com/infinity-resort-tropea-calabria-southern-italy/sale?utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
 
-- title: Hotel Casa Celestino
-  class: hotel-casa-celestino
-  location: Ischia, Italy
-  description: A picturesque stay in laid-back Ischia, with breathtaking sea views and more
-  price: 43
-  price-description: per room per night
-  saved: 47
-  link: https://www.secretescapes.com/hotel-casa-celestino-ischia-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+- title: Relais Palazzo Viviani
+  class: relais-palazzo-viviani
+  location: Montegridolfo, Italy
+  description: A unique stay in a historic Italian village near the Adriatic Coast, with a spa and wine cellar
+  price: 54
+  price-description: per room per person
+  saved: 44
+  link: https://www.secretescapes.com/relais-palazzo-viviani-montegridolfo-italy/sale?utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
 
-- title: Colonna Pervero Hotel
-  class: colonna-pervero-hotel
+- title: The Pelican Beach Resort & Spa
+  class: the-pelican-beach-resort-spa
   location: Sardinia, Italy
-  description: A relaxing five-star stay on Sardinia's dazzling coast, with half board, a spa voucher and more
-  price: 206
-  price-description: per room per night
-  saved: 54
-  link: https://www.secretescapes.com/colonna-pevero-hotel-costa-smeralda-sardinia/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+  description: A chilled, adults-only Sardinian hideaway on its own private beach, with sweeping bay views
+  price: 53
+  price-description: per person per night
+  saved: 51
+  link: https://www.secretescapes.com/the-pelican-beach-resort-and-spa-sardinia-italy3/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
 
-- title: Enterprise Hotel
-  class: enterprise-hotel
-  location: Milan, Italy
-  description: Seventh heaven at a luxe spa hotel in Milan, with stylish interiors and amazing city view
-  price: 64
-  price-description: per room per night
+- title: Hotel Eros
+  class: hotel-eros
+  location: Vulcano, Italy
+  description: An elegant hotel on the island of Vulcano with typically Italian, chic-interiors - including breakfast
+  price: 51
+  price-description: per person per night
+  saved: 35
+  link: https://www.secretescapes.com/hotel-eros-vulcano-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
+
+- title: Relais Fra' Lorenzo
+  class: relais-fra-lorenzo
+  location: Verona, Italy
+  description: A peaceful haven with a pool and breathtaking views of Verona's historic old town
+  price: 70
+  price-description: per person per night
   saved: 47
-  link: https://www.secretescapes.com/enterprise-hotel-milan-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
-
-- title: Griffin's Resort
-  class: griffin-s-resort
-  location: Orvieto, Italy
-  description: A stay in rural Umbria, with breakfast, delicious wine and optional dinner included
-  price: 43
-  price-description: per room per night
-  saved: 37
-  link: https://www.secretescapes.com/griffins-resort-orvieto-italy/sale?utm_source=SE&utm_medium=Hub_0404&utm_campaign=Italia2017
+  link: https://www.secretescapes.com/relais-fra-lorenzo-verona-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
