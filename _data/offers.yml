@@ -173,3 +173,30 @@
   price-description: per person per night
   saved: 47
   link: https://www.secretescapes.com/relais-fra-lorenzo-verona-italy/sale?gce_hpf=0&utm_source=SE&utm_medium=Hub_1004&utm_campaign=Italia2017
+
+- title: Flamingo Hotel
+  class: flamingo-hotel
+  location: Sardinia, Italy
+  description: A relaxing, half board stay at a Sardinian hotel with a private beach, including all travel
+  price: 589
+  price-description: per person for 7 nights
+  saved: 38
+  link: https://www.secretescapes.com/blissful-sardinia-beach-holiday-flamingo-hotel-italy/sale?utm_source=SE&utm_medium=Hub_100417&utm_campaign=Italia2017
+
+- title: Pullman Timi Ama
+  class: pullman-timi-ama
+  location: Sardinia, Italy
+  description: Half-board escape to a stunning spa resort with a scenic natural setting near Villasimius
+  price: 799
+  price-description: per person for 7 nights
+  saved: 34
+  link: https://www.secretescapes.com/5-star-scenic-sardinia-beach-holiday-pullman-timi-ama-italy/sale?utm_source=SE&utm_medium=Hub_100417&utm_campaign=Italia2017
+
+- title: Giardino di Costanza Resort
+  class: giardino-di-costanza-resort
+  location: Sicily, Italy
+  description: Stretch out at a five-star spa hotel in Mazara del Vallo, with a shuttle and beach comfort included
+  price: 579
+  price-description: per person for 7 nights
+  saved: 41
+  link: https://www.secretescapes.com/5-star-sicily-holiday-at-a-serene-spa-resort-near-the-coast-giardino-di-costanza-resort/sale?utm_source=SE&utm_medium=Hub_100417&utm_campaign=Italia2017
