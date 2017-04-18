@@ -88,11 +88,14 @@
     color: $white;
     background-color: rgba($italy-charcoal, 0.25);
     text-align: center;
-    padding: 2em;
     display: -webkit-flex;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2em 1em;
+    @include min-bp(large) {
+      padding: 2em;
+    }
     .flexbox & {}
     &__title,
     &__description {

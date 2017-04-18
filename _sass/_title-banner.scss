@@ -32,6 +32,7 @@
     padding-top: 25vh;
     padding-left: ($margin/2);
     padding-right: ($margin/2);
+    width: 100%;
     .csstransforms & {
       top: 50%;
       left: 50%;
@@ -45,12 +46,13 @@
 
   &__badge {
     position: absolute;
-    bottom: 200px;
+    bottom: 140px;
     left: 50%;
     z-index: $z-content-upper;
     width: 140px;
     margin-left: -70px;
     @include bp(large){
+      bottom: 200px;
       width: 180px;
       margin-left: -90px;
     }

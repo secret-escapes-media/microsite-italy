@@ -55,6 +55,12 @@ $margin: 1.6em;
     padding-left: $margin*1.5;
     padding-right: $margin*1.5;
   }
+  &-none {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .row--margin {
   margin-left: ( $margin / 2 );
@@ -72,6 +78,14 @@ $margin: 1.6em;
     margin-top: 0;
     .row--extra-margin & { margin-top: 0; }
   }
+
+  &.row__column--margin-none {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
 }
 
 
